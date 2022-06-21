@@ -1774,7 +1774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083207322}
   - component: {fileID: 1083207321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1934,7 +1934,7 @@ GameObject:
   - component: {fileID: 1133849726}
   - component: {fileID: 1133849728}
   - component: {fileID: 1133849727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2261,7 +2261,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1143092596}
+  - component: {fileID: 1143092598}
   - component: {fileID: 1143092595}
   m_Layer: 3
   m_Name: Post Processing
@@ -2269,7 +2269,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1143092595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2277,7 +2277,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143092594}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
@@ -2287,7 +2287,7 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!4 &1143092596
+--- !u!4 &1143092598
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2295,8 +2295,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143092594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.77, z: 0}
-  m_LocalScale: {x: 2.0487, y: 2.0487, z: 2.0487}
+  m_LocalPosition: {x: 0, y: 1.247, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -2435,6 +2435,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218971295}
   m_CullTransparentMesh: 1
+--- !u!1 &1259715099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259715100}
+  m_Layer: 0
+  m_Name: Pivot Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259715100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259715099}
+  m_LocalRotation: {x: -0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 0.24, z: 3.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1996310951}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -60, y: 0, z: 0}
 --- !u!1 &1324896371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,7 +3024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1621276745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3404,6 +3434,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1133849726}
     m_Modifications:
+    - target: {fileID: 130253798490187000, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: editMode
+      value: 
+      objectReference: {fileID: 1682810068}
     - target: {fileID: 854714463693068487, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: editMode
       value: 
@@ -3476,9 +3510,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103910413464449635, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: editMode
+      value: 
+      objectReference: {fileID: 1682810068}
     - target: {fileID: 5783607304056322670, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082401192205988034, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082401192205988034, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: _updateRenderers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082401192205988034, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: _outlineSettings._outlineMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082401192205988034, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: _outlineSettings._outlineWidth
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082401192205988034, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: _outlineSettings._outlineColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082401192205988034, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: _outlineSettings._outlineSettings
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7965758315970633581, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3504,7 +3566,9 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 130253798490187000, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+    - {fileID: 4428639753775002910, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
 --- !u!1 &1758516749
 GameObject:
@@ -3594,6 +3658,7 @@ GameObject:
   - component: {fileID: 1770547066}
   - component: {fileID: 1770547065}
   - component: {fileID: 1770547064}
+  - component: {fileID: 1770547068}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -3677,6 +3742,30 @@ Transform:
   m_Father: {fileID: 1882786840}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1770547068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770547063}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271c580db5fd384429cdac899152e9e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outlineResources: {fileID: 11400000, guid: d28e70f030b1a634db9a6a6d5478ef19, type: 2}
+  _outlineSettings:
+    _outlineSettings: {fileID: 0}
+    _outlineColor: {r: 1, g: 0.6556604, b: 0.6556604, a: 1}
+    _outlineWidth: 2
+    _outlineIntensity: 2
+    _outlineAlphaCutoff: 0.9
+    _outlineMode: 0
+  _ignoreLayerMask: 0
+  _cameraEvent: 15
+  _targetCamera: {fileID: 0}
+  _updateRenderers: 0
 --- !u!1 &1822908302
 GameObject:
   m_ObjectHideFlags: 0
@@ -3884,6 +3973,7 @@ MonoBehaviour:
   tileEditor: {fileID: 2014730095}
   pauseScreen: {fileID: 1129846155}
   editMode: {fileID: 1682810068}
+  targetTransform: {fileID: 1770547067}
 --- !u!81 &1996310949
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3945,7 +4035,8 @@ Transform:
   m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
   m_LocalPosition: {x: 0, y: 3, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1259715100}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
@@ -4007,7 +4098,9 @@ MonoBehaviour:
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: UnityFx.Outline.PostProcessing.Outline, UnityFx.Outline.PostProcessing,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_AfterStackBundles: []
 --- !u!1 &2014730094
 GameObject:
@@ -4019,7 +4112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2014730096}
   - component: {fileID: 2014730095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid Placer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

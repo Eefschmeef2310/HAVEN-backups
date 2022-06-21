@@ -118,6 +118,21 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.unityfx.outline": {
+      "version": "file:C:/Users/User/Downloads/UnityFx.Outline-0.8.5/UnityFx.Outline-0.8.5/Outline.Core/Packages/UnityFx.Outline",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "com.unityfx.outline.postprocessing": {
+      "version": "file:C:/Users/User/Downloads/UnityFx.Outline-0.8.5/UnityFx.Outline-0.8.5/Outline.PostProcessing/Packages/UnityFx.Outline.PostProcessing",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unityfx.outline": "0.8.0",
+        "com.unity.postprocessing": "2.3.0"
+      }
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

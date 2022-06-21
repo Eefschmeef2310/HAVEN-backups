@@ -14,6 +14,12 @@ public class CameraController : MonoBehaviour
     public Pause pauseScreen;
     public EditMode editMode;
 
+    //Rotation
+    private float rotateY;
+    [SerializeField] private Transform targetTransform;
+    private Vector3 currentRotation;
+    private Vector3 smoothVelocity = Vector3.zero;
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +32,20 @@ public class CameraController : MonoBehaviour
         {
             pauseScreen.Setup();
         }
+
+        /*//Rotate around the pivot point
+        if(Input.GetMouseButton(1))
+        {
+            //Debug.Log(Input.GetAxis(""));
+            rotateY += Input.GetAxis("Mouse X") * 0.5f;
+            Vector3 nextRotation = new Vector3(60, rotateY, 0);
+            currentRotation = Vector3.SmoothDamp(currentRotation, nextRotation, ref smoothVelocity, 0.5f);
+            transform.localEulerAngles = currentRotation;
+            //transform.position = targetTransform.position - transform.forward *4f;
+            //transform.position = new Vector3(targetTransform.position.x, transform.position.y, targetTransform.position.z) - transform.forward * 3f;
+        }
+        */
+        
 
         //Snapping to clicked object when not editing
         if(!editMode.editing)

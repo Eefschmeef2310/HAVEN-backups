@@ -21,13 +21,13 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 0
-    value: {r: 0, g: 0, b: 0, a: 1}
+    value: {r: 0.047108185, g: 1, b: 0.0141509175, a: 1}
   center:
     overrideState: 0
     value: {x: 0.5, y: 0.5}
   intensity:
-    overrideState: 1
-    value: 0.57
+    overrideState: 0
+    value: 0.522
   smoothness:
     overrideState: 0
     value: 0.2
@@ -58,3 +58,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: -2977061813934511400}
+  - {fileID: 8286999353269538540}
+--- !u!114 &8286999353269538540
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362f6fe821115814693a671c047d5f31, type: 3}
+  m_Name: Outline
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  _defaultResources: {fileID: 11400000, guid: d28e70f030b1a634db9a6a6d5478ef19, type: 2}
+  Resources:
+    overrideState: 1
+    value: {fileID: 11400000, guid: d28e70f030b1a634db9a6a6d5478ef19, type: 2}
+  Layers:
+    overrideState: 1
+    value: {fileID: 11400000, guid: 35ecb6ceb7641bb4e9f464195bc049fb, type: 2}
