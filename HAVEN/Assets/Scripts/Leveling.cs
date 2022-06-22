@@ -5,10 +5,11 @@ using TMPro;
 public class Leveling : MonoBehaviour
 {
     float experience;
-    int level;
+    public int level;
     float experienceNeeded;
     public Slider slider;
     public TextMeshProUGUI levelText;
+    public Resources resourceManager;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +26,38 @@ public class Leveling : MonoBehaviour
         slider.value = experience/experienceNeeded;
         if(experience >= experienceNeeded)
         {
-            level++;
-            levelText.text = level.ToString();
-            experience = 0;
-            experienceNeeded++;
+            LevelUp();
+        }
+    }
+
+    void LevelUp()
+    {
+        //Update level and reset experience to 0
+        level++;
+        levelText.text = level.ToString();
+        experience = 0;
+        experienceNeeded++;
+
+        //check unlocked item
+        switch(level)
+        {
+            case 10:
+                resourceManager.resources.Add("Stone", 0);
+                break;
+            case 20:
+                resourceManager.resources.Add("Steel", 0);
+                break;
+            case 30:
+                resourceManager.resources.Add("Tech", 0);
+                break;
+            case 40:
+                resourceManager.resources.Add("Runes", 0);
+                break;
+            case 50:
+                resourceManager.resources.Add("Havenite", 0);
+                break;
+            default:
+                break;
         }
     }
 }

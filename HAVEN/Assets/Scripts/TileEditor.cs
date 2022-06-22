@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 public class TileEditor : MonoBehaviour
 {
     public Tilemap tilemap;
     public Transform prefab;
     [SerializeField] private GameObject hover;
+    public TextMeshProUGUI tileAmount;
+    public int tileCount;
 
     public float maxPosX = 1;
     public float minPosX = 0;
@@ -31,6 +34,8 @@ public class TileEditor : MonoBehaviour
                 Instantiate(prefab, pos, Quaternion.identity, transform.parent);
                 
                 //Debug.Log("Cell placed at " + cell.y);
+                tileCount++;
+                tileAmount.text = tileCount.ToString();
 
                 if(cell.x >= 0 && cell.x > maxPosX)
                 {
