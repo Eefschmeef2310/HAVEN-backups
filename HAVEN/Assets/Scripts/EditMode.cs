@@ -27,7 +27,7 @@ public class EditMode : MonoBehaviour
 
         foreach (Transform child in tilemap)
         {
-            if(child.name == "TileBase")
+            if(child.tag == "Tile")
             {
                 foreach (Transform grandChild in child)
                 {
@@ -48,7 +48,7 @@ public class EditMode : MonoBehaviour
 
         foreach (Transform child in tilemap)
         {
-            if(child.name == "TileBase")
+            if(child.tag == "Tile")
             {
                 foreach (Transform grandChild in child)
                 {

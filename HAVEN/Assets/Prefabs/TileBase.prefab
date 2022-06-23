@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6082401192205988034}
   m_Layer: 6
   m_Name: TileBase
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,14 +53,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2951628623467951749}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 271c580db5fd384429cdac899152e9e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _outlineResources: {fileID: 11400000, guid: d28e70f030b1a634db9a6a6d5478ef19, type: 2}
   _outlineSettings:
-    _outlineSettings: {fileID: 0}
+    _outlineSettings: {fileID: 11400000, guid: fbb2bc59d5ac26d47801bf0862e0e5cf, type: 2}
     _outlineColor: {r: 0, g: 0, b: 0, a: 1}
     _outlineWidth: 4
     _outlineIntensity: 2
