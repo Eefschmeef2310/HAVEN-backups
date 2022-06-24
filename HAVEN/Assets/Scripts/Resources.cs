@@ -8,6 +8,7 @@ public class Resources : MonoBehaviour
     public Dictionary<string, int> resources = new Dictionary<string, int>();
     public TextMeshProUGUI test;
     [SerializeField] private Leveling playerLevel;
+    public int dirtAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class Resources : MonoBehaviour
     { 
         //Debug.Log(resources.ToString());
         //resources["Dirt"]++;
-        //test.text = resources["Dirt"].ToString();
+        resources["Dirt"] = dirtAmount;
+        test.text = "Dirt: " + resources["Dirt"];
     }
 }
