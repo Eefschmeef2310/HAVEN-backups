@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5254798631688743911}
   - component: {fileID: 4790024887834014842}
   - component: {fileID: 5878937817676267190}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Dirt
   m_TagString: Tile
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 466b5fb81e70bd149a296ab3678377ae, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 466b5fb81e70bd149a296ab3678377ae, type: 3}
       propertyPath: m_TagString
@@ -135,7 +135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387050289678576627, guid: 466b5fb81e70bd149a296ab3678377ae, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 466b5fb81e70bd149a296ab3678377ae, type: 3}
