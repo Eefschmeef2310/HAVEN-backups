@@ -13,15 +13,16 @@ public class Resources : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        resources.Add("Dirt", 0);
+        resources.Add("Dirt", dirtAmount);
+        resources.Add("Supply Kit", 1);
     }
 
     // Update is called once per frame
     void Update()
     { 
-        //Debug.Log(resources.ToString());
+        //Debug.Log(resources["Dirt"]);
         //resources["Dirt"]++;
-        resources["Dirt"] = dirtAmount;
+        //resources["Dirt"] = dirtAmount;
         test.text = "Dirt: " + resources["Dirt"];
     }
 }

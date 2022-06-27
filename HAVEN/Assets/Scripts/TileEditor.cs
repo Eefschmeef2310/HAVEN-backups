@@ -12,6 +12,7 @@ public class TileEditor : MonoBehaviour
     public int tileCount;
     public AnimationCurve dirtNeeded;
     public Resources resourceManager;
+    public TextMeshProUGUI dirtNeededText;
 
     public float maxPosX = 1;
     public float minPosX = 0;
@@ -22,6 +23,8 @@ public class TileEditor : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+
+        dirtNeededText.text = "Dirt Needed: " + (int)dirtNeeded.Evaluate(tileCount);
 
         if (Physics.Raycast(ray, out hit))
         {         
@@ -40,9 +43,7 @@ public class TileEditor : MonoBehaviour
                     Instantiate(dirt, pos, Quaternion.identity, transform.parent);
                     dirt.gameObject.SetActive(false);
 
-                    Debug.Log(dirtNeeded.Evaluate(tileCount));
-
-                    resourceManager.dirtAmount -= ((int)dirtNeeded.Evaluate(tileCount));
+                    resourceManager.resources["Dirt"] -= ((int)dirtNeeded.Evaluate(tileCount));
                     
                     //Debug.Log("Cell placed at " + cell.y);
                     tileCount++;
@@ -75,8 +76,25 @@ public class TileEditor : MonoBehaviour
                 {
                     Vector3Int cell = tilemap.WorldToCell(hit.point);
                     Vector3 pos = tilemap.GetCellCenterWorld(cell);
-                    Destroy(hit.collider.gameObject);
-                    Instantiate(building, pos, Quaternion.identity, transform.parent);
+
+                    building.gameObject.SetActive(true);
+
+                    if(building.gameObject.name == "DirtMine")
+                    {
+                        if(resourceManager.resources["Supply Kit"] == 1)
+                        {
+                            resourceManager.resources["Supply Kit"] = 0;
+                            Destroy(hit.transform.parent.parent.gameObject);
+                            Instantiate(building, pos, Quaternion.identity, transform.parent);
+                        }
+                    }
+                    else
+                    {
+                        Destroy(hit.transform.parent.parent.gameObject);
+                        Instantiate(building, pos, Quaternion.identity, transform.parent);
+                    }
+                    
+                    building.gameObject.SetActive(false);
                 }
             }  
         }
