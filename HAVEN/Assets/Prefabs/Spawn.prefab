@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49cc6c08496e7454fbfbcf8a70a1e52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editMode: {fileID: 0}
+  editMode: {fileID: 1335603885694516330, guid: c5ed082e7c6137d4682428e012caba5c, type: 3}
 --- !u!1001 &6537895880439889545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn
       objectReference: {fileID: 0}
+    - target: {fileID: 7385252345617611980, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: leveling
+      value: 
+      objectReference: {fileID: 860071669595555038, guid: a21e305c55d094640b426cd87891a519, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
 --- !u!4 &8851369721862492786 stripped

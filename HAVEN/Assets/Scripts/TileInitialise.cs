@@ -4,10 +4,17 @@ using System.Collections;
 
 public class TileInitialise : MonoBehaviour
 {
+    public int experience;
+    public Leveling leveling;
+
     void Start()
     {
         Tilemap tilemap = transform.parent.GetComponent<Tilemap>();
         Transform red = gameObject.transform.Find("Red");
+
+        Debug.Log(leveling.experience);
+        leveling.experience += experience;
+        Debug.Log(leveling.experience);
 
         Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
 

@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1426bad4a9d22d749bc58e3da83a6e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experience: 0
+  leveling: {fileID: 860071669595555038, guid: a21e305c55d094640b426cd87891a519, type: 3}
 --- !u!114 &6082401192205988034
 MonoBehaviour:
   m_ObjectHideFlags: 0

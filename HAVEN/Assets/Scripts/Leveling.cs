@@ -4,7 +4,7 @@ using TMPro;
 
 public class Leveling : MonoBehaviour
 {
-    float experience;
+    public float experience;
     public int level;
     float experienceNeeded;
     public Slider slider;
@@ -22,7 +22,7 @@ public class Leveling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        experience++;
+        //experience++;
         slider.value = experience/experienceNeeded;
         if(experience >= experienceNeeded)
         {
