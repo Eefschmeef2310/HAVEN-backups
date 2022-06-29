@@ -19,6 +19,11 @@ public class TileEditor : MonoBehaviour
     public float maxPosY = 1;
     public float minPosY = 0;
 
+    void Start()
+    {
+        hover.SetActive(true);
+    }
+
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
