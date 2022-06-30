@@ -84,14 +84,16 @@ public class TileEditor : MonoBehaviour
 
                     building.gameObject.SetActive(true);
 
-                    if(building.gameObject.name == "DirtMine")
+                    if(building.gameObject.name == "DirtMine" && resourceManager.resources["Supply Kit"] == 1)
                     {
-                        if(resourceManager.resources["Supply Kit"] == 1)
-                        {
-                            resourceManager.resources["Supply Kit"] = 0;
-                            Destroy(hit.transform.parent.parent.gameObject);
-                            Instantiate(building, pos, Quaternion.identity, transform.parent);
-                        }
+                        resourceManager.resources["Supply Kit"]--;
+                        Destroy(hit.transform.parent.parent.gameObject);
+                        Instantiate(building, pos, Quaternion.identity, transform.parent);
+                    }
+                    else if(building.gameObject.name == "LumberMill" && resourceManager.resources["Seeds"] >= 1 && resourceManager.resources["Wood"] >= 1)
+                    {
+                        resourceManager.resources["Seeds"]--;
+                        resourceManager.resources["Wood"]--;
                     }
                     else
                     {

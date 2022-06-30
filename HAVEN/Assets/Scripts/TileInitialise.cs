@@ -12,9 +12,9 @@ public class TileInitialise : MonoBehaviour
         Tilemap tilemap = transform.parent.GetComponent<Tilemap>();
         Transform red = gameObject.transform.Find("Red");
 
-        Debug.Log(leveling.experience);
+        //Debug.Log(leveling.experience);
         leveling.experience += experience;
-        Debug.Log(leveling.experience);
+        //Debug.Log(leveling.experience);
 
         Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
 

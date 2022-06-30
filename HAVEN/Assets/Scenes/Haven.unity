@@ -5469,8 +5469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41368350cf1079d4e9f4ba3407ea9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experience: 0
-  level: 0
+  experience: 50
+  level: 1
+  experienceNeeded: 100
   slider: {fileID: 1135749264}
   levelText: {fileID: 860071668258525793}
   resourceManager: {fileID: 456938600}

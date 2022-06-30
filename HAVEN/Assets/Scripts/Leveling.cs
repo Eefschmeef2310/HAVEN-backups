@@ -6,18 +6,10 @@ public class Leveling : MonoBehaviour
 {
     public float experience;
     public int level;
-    float experienceNeeded;
+    public float experienceNeeded;
     public Slider slider;
     public TextMeshProUGUI levelText;
     public Resources resourceManager;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        experience = 0;
-        level = 1;
-        experienceNeeded = 100;
-    }
 
     // Update is called once per frame
     void Update()
@@ -41,8 +33,9 @@ public class Leveling : MonoBehaviour
         //check unlocked item
         switch(level)
         {
-            case 5:
-                resourceManager.resources.Add("Wood", 0);
+            case 2:
+                resourceManager.resources.Add("Seeds", 1);
+                resourceManager.resources.Add("Wood", 1);
                 break;
             case 10:
                 resourceManager.resources.Add("Stone", 0);
