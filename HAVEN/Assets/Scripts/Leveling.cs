@@ -35,12 +35,15 @@ public class Leveling : MonoBehaviour
         //Update level and reset experience to 0
         level++;
         levelText.text = level.ToString();
-        experience = 0;
+        experience -= experienceNeeded;
         experienceNeeded++;
 
         //check unlocked item
         switch(level)
         {
+            case 5:
+                resourceManager.resources.Add("Wood", 0);
+                break;
             case 10:
                 resourceManager.resources.Add("Stone", 0);
                 break;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DirtMine : MonoBehaviour
+public class LumberMill : MonoBehaviour
 {
     public Resources resourceManager;
     public int incrementDelay; //time before another dirt is added (in seconds)
@@ -14,7 +14,7 @@ public class DirtMine : MonoBehaviour
         if(timer >= incrementDelay)
         {
             timer = 0;
-            resourceManager.resources["Dirt"]++;
+            resourceManager.resources["Wood"]++;
         }
     }
 }
