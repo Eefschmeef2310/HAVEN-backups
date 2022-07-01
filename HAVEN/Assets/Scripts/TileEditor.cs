@@ -11,7 +11,6 @@ public class TileEditor : MonoBehaviour
     public TextMeshProUGUI tileAmount;
     public int tileCount;
     public AnimationCurve dirtNeeded;
-    public Resources resourceManager;
     public TextMeshProUGUI dirtNeededText;
 
     public float maxPosX = 1;
@@ -38,7 +37,7 @@ public class TileEditor : MonoBehaviour
                 hover.transform.position = hit.collider.gameObject.transform.position;
                 hover.transform.rotation = Quaternion.Euler(0, 30, 0);
                 
-                if(Input.GetMouseButtonDown(0) && hit.collider.gameObject.layer != 7 && resourceManager.resources["Dirt"] >= dirtNeeded.Evaluate(tileCount))
+                if(Input.GetMouseButtonDown(0) && hit.collider.gameObject.layer != 7 && Resources.resources["Dirt"] >= dirtNeeded.Evaluate(tileCount))
                 {
                     Destroy(hit.collider.gameObject);
 
@@ -48,7 +47,7 @@ public class TileEditor : MonoBehaviour
                     Instantiate(dirt, pos, Quaternion.identity, transform.parent);
                     dirt.gameObject.SetActive(false);
 
-                    resourceManager.resources["Dirt"] -= ((int)dirtNeeded.Evaluate(tileCount));
+                    Resources.resources["Dirt"] -= ((int)dirtNeeded.Evaluate(tileCount));
                     
                     //Debug.Log("Cell placed at " + cell.y);
                     tileCount++;
@@ -84,16 +83,16 @@ public class TileEditor : MonoBehaviour
 
                     building.gameObject.SetActive(true);
 
-                    if(building.gameObject.name == "DirtMine" && resourceManager.resources["Supply Kit"] == 1)
+                    if(building.gameObject.name == "DirtMine" && Resources.resources["Supply Kit"] == 1)
                     {
-                        resourceManager.resources["Supply Kit"]--;
+                        Resources.resources["Supply Kit"]--;
                         Destroy(hit.transform.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
                     }
-                    else if(building.gameObject.name == "LumberMill" && resourceManager.resources["Seeds"] >= 1 && resourceManager.resources["Wood"] >= 1)
+                    else if(building.gameObject.name == "LumberMill" && Resources.resources["Seeds"] >= 1 && Resources.resources["Wood"] >= 1)
                     {
-                        resourceManager.resources["Seeds"]--;
-                        resourceManager.resources["Wood"]--;
+                        Resources.resources["Seeds"]--;
+                        Resources.resources["Wood"]--;
                     }
                     else
                     {

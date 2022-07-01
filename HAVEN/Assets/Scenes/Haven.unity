@@ -250,6 +250,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199829823}
   m_Mesh: {fileID: -3161591856204592837, guid: b0579d40f22fcb140847c3b90632d854, type: 3}
+--- !u!1 &224377586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5813250738540644036, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
+  m_PrefabInstance: {fileID: 1228885046}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &224377592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224377586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4c0512e16fd814a91f2df30660a07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editMode: {fileID: 1682810068}
+  expeditionPopUp: {fileID: 658121502}
 --- !u!1 &323044017
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,8 +571,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8492e7e95ebe2624b9878f5bff7ea154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 1305703732}
-  playerLevel: {fileID: 0}
   dirtAmount: 6
 --- !u!4 &456938601
 Transform:
@@ -2897,7 +2914,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 224377592}
         m_TargetAssemblyTypeName: ExpeditionPopUp, Assembly-CSharp
         m_MethodName: CloseExpeditionPopUp
         m_Mode: 1
@@ -5179,7 +5196,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 1
     m_RotationOrder: 4
-  resourceManager: {fileID: 456938600}
   dirtNeededText: {fileID: 695148992}
   maxPosX: 1
   minPosX: -1
@@ -5319,7 +5335,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 224377592}
         m_TargetAssemblyTypeName: ExpeditionPopUp, Assembly-CSharp
         m_MethodName: Expedition
         m_Mode: 1
@@ -5483,7 +5499,6 @@ MonoBehaviour:
   experienceNeeded: 100
   slider: {fileID: 1135749264}
   levelText: {fileID: 860071668258525793}
-  resourceManager: {fileID: 456938600}
 --- !u!224 &860071668258525798
 RectTransform:
   m_ObjectHideFlags: 0

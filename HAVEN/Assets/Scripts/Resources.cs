@@ -5,16 +5,18 @@ using TMPro;
 
 public class Resources : MonoBehaviour
 {
-    public Dictionary<string, int> resources = new Dictionary<string, int>();
-    public TextMeshProUGUI test;
-    [SerializeField] private Leveling playerLevel;
+    public static Dictionary<string, int> resources = new Dictionary<string, int>();
+    //public TextMeshProUGUI test;
     public int dirtAmount;
 
     // Start is called before the first frame update
     void Start()
     {
-        resources.Add("Dirt", dirtAmount);
-        resources.Add("Supply Kit", 1);
+        if(resources.Count == 0)
+        {
+            resources.Add("Dirt", dirtAmount);
+            resources.Add("Supply Kit", 1);
+        }
     }
 
     // Update is called once per frame
@@ -22,7 +24,8 @@ public class Resources : MonoBehaviour
     { 
         //Debug.Log(resources["Supply Kit"]);
         //resources["Dirt"]++;
+        //Debug.Log(resources["Dirt"]);
         //resources["Dirt"] = dirtAmount;
-        test.text = "Dirt: " + resources["Dirt"];
+        //test.text = "Dirt: " + resources["Dirt"];
     }
 }
