@@ -1,15 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2892051970790745647
+--- !u!1001 &1759246991088868900
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8851369721862492786}
+    m_TransformParent: {fileID: 8996665870165011873}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0ce2e76e5719a924cbcb941be12d0fd1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ce2e76e5719a924cbcb941be12d0fd1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,25 +57,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ce2e76e5719a924cbcb941be12d0fd1, type: 3}
---- !u!1 &6981820357427314383 stripped
+--- !u!1 &5813250738540644036 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3979271744757638944, guid: 0ce2e76e5719a924cbcb941be12d0fd1, type: 3}
-  m_PrefabInstance: {fileID: 2892051970790745647}
+  m_PrefabInstance: {fileID: 1759246991088868900}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4380430897524654188
+--- !u!114 &8873341835388406153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6981820357427314383}
+  m_GameObject: {fileID: 5813250738540644036}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49cc6c08496e7454fbfbcf8a70a1e52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editMode: {fileID: 1335603885694516330, guid: c5ed082e7c6137d4682428e012caba5c, type: 3}
---- !u!1001 &6537895880439889545
+  editMode: {fileID: 0}
+--- !u!1001 &2512539053706441457
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -130,14 +130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn
       objectReference: {fileID: 0}
-    - target: {fileID: 7385252345617611980, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
-      propertyPath: leveling
-      value: 
-      objectReference: {fileID: 860071669595555038, guid: a21e305c55d094640b426cd87891a519, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
---- !u!4 &8851369721862492786 stripped
+--- !u!4 &8996665870165011873 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2336563864245169403, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
-  m_PrefabInstance: {fileID: 6537895880439889545}
+  m_CorrespondingSourceObject: {fileID: 6774758561049681744, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+  m_PrefabInstance: {fileID: 2512539053706441457}
   m_PrefabAsset: {fileID: 0}

@@ -5,15 +5,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1569442130904138343}
+    m_TransformParent: {fileID: 7759179055255859660}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b15304a96f5b01c46b6e167d6003dc54, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b15304a96f5b01c46b6e167d6003dc54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b15304a96f5b01c46b6e167d6003dc54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b15304a96f5b01c46b6e167d6003dc54, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b15304a96f5b01c46b6e167d6003dc54, type: 3}
       propertyPath: m_LocalRotation.y
@@ -144,6 +144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirtMine
       objectReference: {fileID: 0}
+    - target: {fileID: 6774758561049681744, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7385252345617611980, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: leveling
       value: 
@@ -159,9 +163,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2951628623467951749, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
   m_PrefabInstance: {fileID: 3867153068152467100}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1569442130904138343 stripped
+--- !u!4 &7759179055255859660 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2336563864245169403, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6774758561049681744, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
   m_PrefabInstance: {fileID: 3867153068152467100}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &9029555941009846692

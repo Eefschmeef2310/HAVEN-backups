@@ -635,6 +635,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 459968, guid: 407bd5cbe8c43334bb1b25c0f3826974, type: 3}
   m_PrefabInstance: {fileID: 480385818}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &482843849 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 194622909991296522, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
+  m_PrefabInstance: {fileID: 1228885046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &567945400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,11 +2050,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975573368}
   m_CullTransparentMesh: 1
---- !u!4 &1022550655 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8851369721862492786, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
-  m_PrefabInstance: {fileID: 1228885046}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1050782925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,7 +2465,7 @@ Transform:
   - {fileID: 1737560312}
   - {fileID: 341941691}
   - {fileID: 1227322163}
-  - {fileID: 1022550655}
+  - {fileID: 482843849}
   - {fileID: 2014730096}
   m_Father: {fileID: 1083207322}
   m_RootOrder: 0
@@ -2897,7 +2897,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2119990085}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ExpeditionPopUp, Assembly-CSharp
         m_MethodName: CloseExpeditionPopUp
         m_Mode: 1
@@ -3198,11 +3198,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1133849726}
     m_Modifications:
+    - target: {fileID: 194622909991296522, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4379445286132744773, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
       propertyPath: leveling
       value: 
       objectReference: {fileID: 860071668258525795}
     - target: {fileID: 4380430897524654188, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
+      propertyPath: editMode
+      value: 
+      objectReference: {fileID: 1682810068}
+    - target: {fileID: 4946072880063417917, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
+      propertyPath: leveling
+      value: 
+      objectReference: {fileID: 860071668258525795}
+    - target: {fileID: 6949208048312871737, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
       propertyPath: editMode
       value: 
       objectReference: {fileID: 1682810068}
@@ -3258,6 +3270,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8873341835388406153, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
+      propertyPath: editMode
+      value: 
+      objectReference: {fileID: 1682810068}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
 --- !u!1 &1259715099
@@ -4425,6 +4441,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 334106092666601293, guid: 3d458c32b9108a447a2aa746647d86d8, type: 3}
+      propertyPath: resourceManager
+      value: 
+      objectReference: {fileID: 456938600}
     - target: {fileID: 726030591335509395, guid: 3d458c32b9108a447a2aa746647d86d8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4469,7 +4489,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2516646857722157471, guid: 3d458c32b9108a447a2aa746647d86d8, type: 3}
+      propertyPath: editMode
+      value: 
+      objectReference: {fileID: 1682810068}
     - target: {fileID: 3057214731008585396, guid: 3d458c32b9108a447a2aa746647d86d8, type: 3}
+      propertyPath: editMode
+      value: 
+      objectReference: {fileID: 1682810068}
+    - target: {fileID: 5105750456447917744, guid: 3d458c32b9108a447a2aa746647d86d8, type: 3}
       propertyPath: editMode
       value: 
       objectReference: {fileID: 1682810068}
@@ -5208,25 +5236,6 @@ RectTransform:
   m_AnchoredPosition: {x: -80.124, y: 0}
   m_SizeDelta: {x: 149.753, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2119990084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6981820357427314383, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
-  m_PrefabInstance: {fileID: 1228885046}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2119990085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119990084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4c0512e16fd814a91f2df30660a07c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  editMode: {fileID: 1682810068}
-  expeditionPopUp: {fileID: 658121502}
 --- !u!1 &2122038401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5310,7 +5319,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2119990085}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ExpeditionPopUp, Assembly-CSharp
         m_MethodName: Expedition
         m_Mode: 1
@@ -5520,6 +5529,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1621276745}
     m_Modifications:
+    - target: {fileID: 1335603885694516330, guid: c5ed082e7c6137d4682428e012caba5c, type: 3}
+      propertyPath: editing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1335603885694516330, guid: c5ed082e7c6137d4682428e012caba5c, type: 3}
       propertyPath: tilemap
       value: 

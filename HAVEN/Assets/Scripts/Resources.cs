@@ -20,7 +20,7 @@ public class Resources : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        Debug.Log(resources["Supply Kit"]);
+        //Debug.Log(resources["Supply Kit"]);
         //resources["Dirt"]++;
         //resources["Dirt"] = dirtAmount;
         test.text = "Dirt: " + resources["Dirt"];
