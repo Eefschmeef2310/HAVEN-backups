@@ -9,7 +9,7 @@ public class TileEditor : MonoBehaviour
     public Transform building;
     [SerializeField] private GameObject hover;
     public TextMeshProUGUI tileAmount;
-    public int tileCount;
+    public int tileCount = 1;
     public AnimationCurve dirtNeeded;
     public TextMeshProUGUI dirtNeededText;
 
@@ -43,6 +43,7 @@ public class TileEditor : MonoBehaviour
 
                     Vector3Int cell = tilemap.WorldToCell(hit.point);
                     Vector3 pos = tilemap.GetCellCenterWorld(cell);
+
                     dirt.gameObject.SetActive(true);
                     Instantiate(dirt, pos, Quaternion.identity, transform.parent);
                     dirt.gameObject.SetActive(false);
@@ -86,17 +87,19 @@ public class TileEditor : MonoBehaviour
                     if(building.gameObject.name == "DirtMine" && Resources.resources["Supply Kit"] == 1)
                     {
                         Resources.resources["Supply Kit"]--;
-                        Destroy(hit.transform.parent.parent.gameObject);
+                        Destroy(hit.transform.parent.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
                     }
                     else if(building.gameObject.name == "LumberMill" && Resources.resources["Seeds"] >= 1 && Resources.resources["Wood"] >= 1)
                     {
                         Resources.resources["Seeds"]--;
                         Resources.resources["Wood"]--;
+                        Destroy(hit.transform.parent.parent.parent.gameObject);
+                        Instantiate(building, pos, Quaternion.identity, transform.parent);
                     }
                     else
                     {
-                        Destroy(hit.transform.parent.parent.gameObject);
+                        Destroy(hit.transform.parent.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
                     }
                     

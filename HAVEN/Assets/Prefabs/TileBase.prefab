@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2336563864245169403}
   - component: {fileID: 7385252345617611980}
   - component: {fileID: 6082401192205988034}
+  - component: {fileID: 3815327774467566882}
   m_Layer: 6
   m_Name: TileBase
   m_TagString: Tile
@@ -72,6 +73,18 @@ MonoBehaviour:
   _cameraEvent: 15
   _targetCamera: {fileID: 0}
   _updateRenderers: 0
+--- !u!114 &3815327774467566882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951628623467951749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397bfe99e6266e940a7d7ff52a2efef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3964375127579091120
 GameObject:
   m_ObjectHideFlags: 0

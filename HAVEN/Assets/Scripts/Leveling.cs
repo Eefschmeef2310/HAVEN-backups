@@ -33,8 +33,8 @@ public class Leveling : MonoBehaviour
         switch(level)
         {
             case 2:
-                Resources.resources.Add("Seeds", 1);
-                Resources.resources.Add("Wood", 1);
+                //Resources.resources.Add("Seeds", 1);
+                //Resources.resources.Add("Wood", 1);
                 break;
             case 10:
                 Resources.resources.Add("Stone", 0);
