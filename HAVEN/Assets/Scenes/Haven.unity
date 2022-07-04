@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8492e7e95ebe2624b9878f5bff7ea154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtAmount: 21
+  dirtAmount: 401
 --- !u!4 &456938601
 Transform:
   m_ObjectHideFlags: 0

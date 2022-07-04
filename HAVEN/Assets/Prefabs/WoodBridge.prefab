@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: happy
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3964375127579091120, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: m_TagString
+      value: Amenity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
 --- !u!1 &5774239523266056167 stripped

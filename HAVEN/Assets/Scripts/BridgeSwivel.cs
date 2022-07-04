@@ -8,6 +8,8 @@ public class BridgeSwivel : MonoBehaviour
     {
         Tilemap tilemap = transform.parent.GetComponent<Tilemap>();
         Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
+
+        //Debug.Log(cellPosition.y);
         
         Vector3Int[] surroundingCells = {cellPosition + Vector3Int.up, 
             cellPosition + Vector3Int.right, 
@@ -28,13 +30,31 @@ public class BridgeSwivel : MonoBehaviour
 
         for (int i = 0; i <= surroundingCells.Length - 1; i++)
         {
-            Vector3 sphere = new Vector3(surroundingCells[i].x, 0, surroundingCells[i].y);
-
-            if (!Physics.CheckSphere(sphere, 0.1f))
+            Vector3 sphere = new Vector3(surroundingCells[i].x, 0, surroundingCells[i].y*0.75f);
+            //Debug.Log(Physics.OverlapSphere(sphere,0.1f)[0]);
+            if (Physics.OverlapSphere(sphere,0.1f)[0].gameObject.transform.parent.parent.tag == "Tile" && Physics.OverlapSphere(sphere,0.1f)[0].gameObject.tag != "Amenity")
             {
                 Debug.Log(i);
-                transform.rotation = Quaternion.Euler(0, 60*(i+1), 0);
-                return;
+                if(cellPosition.y % 2 == 0)
+                {
+                    transform.rotation = Quaternion.Euler(0, 60*(i), 0);
+                    return;
+                }
+                else
+                {
+                    //Debug.Log("test");
+                    if(cellPosition.y > 0)
+                    {
+                        Debug.Log("bruh");
+                        transform.rotation = Quaternion.Euler(0, 60*(i-1), 0);
+                        return;
+                    }
+                    else
+                    {
+                        transform.rotation = Quaternion.Euler(0, 60*(i-1), 0);
+                        return;
+                    }
+                }
             }
         }
     }

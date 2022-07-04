@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397bfe99e6266e940a7d7ff52a2efef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happy: 0
 --- !u!1 &3964375127579091120
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +97,7 @@ GameObject:
   - component: {fileID: 6774758561049681744}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -177,6 +178,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
+      propertyPath: m_TagString
+      value: Boundary
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
       propertyPath: m_StaticEditorFlags
