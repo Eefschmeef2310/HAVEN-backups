@@ -57,6 +57,10 @@ public class EditMode : MonoBehaviour
                     }
                 }
             }
+            else if(child.name == "Red(Clone)")
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 }

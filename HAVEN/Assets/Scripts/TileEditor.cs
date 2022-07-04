@@ -79,8 +79,7 @@ public class TileEditor : MonoBehaviour
             {
                 if(Input.GetMouseButtonDown(0))
                 {
-                    Vector3Int cell = tilemap.WorldToCell(hit.point);
-                    Vector3 pos = tilemap.GetCellCenterWorld(cell);
+                    Vector3 pos = hit.collider.gameObject.transform.position;
 
                     building.gameObject.SetActive(true);
 

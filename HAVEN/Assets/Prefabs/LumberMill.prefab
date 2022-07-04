@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8922490920678100696
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3049629037243284664}
-  m_Layer: 0
-  m_Name: Model
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3049629037243284664
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8922490920678100696}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6081090010099367009}
-  m_Father: {fileID: 726030591335509395}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3061960171585945960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LumberMill
       objectReference: {fileID: 0}
+    - target: {fileID: 6774758561049681744, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
 --- !u!1 &182411271174944749 stripped
@@ -93,9 +66,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2951628623467951749, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
   m_PrefabInstance: {fileID: 3061960171585945960}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &726030591335509395 stripped
+--- !u!4 &8393165483374894648 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2336563864245169403, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6774758561049681744, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
   m_PrefabInstance: {fileID: 3061960171585945960}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &334106092666601293
@@ -110,14 +83,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e2ceb5eff9f244ab322936847442ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceManager: {fileID: 0}
   incrementDelay: 600
 --- !u!1001 &6048024616672910218
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3049629037243284664}
+    m_TransformParent: {fileID: 8393165483374894648}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f523d7fe10578b14bb348103bf2fc74f, type: 3}
       propertyPath: m_RootOrder
@@ -125,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f523d7fe10578b14bb348103bf2fc74f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000000009536743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f523d7fe10578b14bb348103bf2fc74f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -133,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f523d7fe10578b14bb348103bf2fc74f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.000000016518124
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f523d7fe10578b14bb348103bf2fc74f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -169,11 +141,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f523d7fe10578b14bb348103bf2fc74f, type: 3}
---- !u!4 &6081090010099367009 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f523d7fe10578b14bb348103bf2fc74f, type: 3}
-  m_PrefabInstance: {fileID: 6048024616672910218}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &535212605898823558 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3133498875991405556, guid: f523d7fe10578b14bb348103bf2fc74f, type: 3}

@@ -542,6 +542,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406220243}
   m_CullTransparentMesh: 1
+--- !u!4 &445157448 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+  m_PrefabInstance: {fileID: 1419226986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &456938599
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8492e7e95ebe2624b9878f5bff7ea154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirtAmount: 6
+  dirtAmount: 21
 --- !u!4 &456938601
 Transform:
   m_ObjectHideFlags: 0
@@ -2528,6 +2533,7 @@ Transform:
   - {fileID: 1227322163}
   - {fileID: 341941691}
   - {fileID: 1737560312}
+  - {fileID: 445157448}
   - {fileID: 2014730096}
   m_Father: {fileID: 1083207322}
   m_RootOrder: 0
@@ -3770,6 +3776,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341456418}
   m_CullTransparentMesh: 1
+--- !u!1001 &1419226986
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1133849726}
+    m_Modifications:
+    - target: {fileID: 2209540332436948398, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: leveling
+      value: 
+      objectReference: {fileID: 860071668258525795}
+    - target: {fileID: 4151062705807886866, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081833488186876016, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: editMode
+      value: 
+      objectReference: {fileID: 1682810068}
+    - target: {fileID: 5487274121282180160, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774239523266056167, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_Name
+      value: WoodBridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774239523266056167, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393236445342799257, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006855315740831838, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8808378660494348683, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_Name
+      value: Base Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8808378660494348683, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: m_TagString
+      value: Amenity
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
 --- !u!1 &1511473330
 GameObject:
   m_ObjectHideFlags: 0
@@ -5217,7 +5312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1133849728}
   dirt: {fileID: 1227322163}
-  building: {fileID: 341941691}
+  building: {fileID: 445157448}
   hover: {fileID: 199829823}
   tileAmount: {fileID: 1218971297}
   tileCount: 1
@@ -5263,7 +5358,7 @@ Transform:
   m_Children:
   - {fileID: 199829826}
   m_Father: {fileID: 1133849726}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061791975
 GameObject:

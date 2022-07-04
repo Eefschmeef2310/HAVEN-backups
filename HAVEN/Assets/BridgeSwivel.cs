@@ -1,21 +1,14 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using System.Collections;
 
-public class TileInitialise : MonoBehaviour
+public class BridgeSwivel : MonoBehaviour
 {
-    public int experience;
-    public Leveling leveling;
-
+    //This program needs to get surrounding cells, check which is the FIRST that has a tile, then swivel the bridge that way
     void Start()
     {
         Tilemap tilemap = transform.parent.GetComponent<Tilemap>();
-        Transform red = gameObject.transform.Find("Red");
-
-        leveling.experience += experience;
-
         Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
-
+        
         Vector3Int[] surroundingCells = {cellPosition + Vector3Int.up, 
             cellPosition + Vector3Int.right, 
             cellPosition + Vector3Int.down, 
@@ -32,16 +25,16 @@ public class TileInitialise : MonoBehaviour
         {
             surroundingCells[5] = cellPosition + Vector3Int.right + Vector3Int.up;
         }
-            
+
         for (int i = 0; i <= surroundingCells.Length - 1; i++)
         {
             Vector3 sphere = new Vector3(surroundingCells[i].x, 0, surroundingCells[i].y);
 
             if (!Physics.CheckSphere(sphere, 0.1f))
             {
-                //Debug.Log("No tile at " + surroundingCells[i]);
-                Vector3 pos = tilemap.GetCellCenterWorld(surroundingCells[i]);
-                Instantiate(red, pos, Quaternion.Euler(0,30,0), transform.parent);
+                Debug.Log(i);
+                transform.rotation = Quaternion.Euler(0, 60*(i+1), 0);
+                return;
             }
         }
     }
