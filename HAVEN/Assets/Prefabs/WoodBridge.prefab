@@ -57,20 +57,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5842bed48300d1f4cab98881a226ba8a, type: 3}
+--- !u!4 &1705276521817080854 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5842bed48300d1f4cab98881a226ba8a, type: 3}
+  m_PrefabInstance: {fileID: 1162177791832482813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8573952541780913370
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2796935328122988082}
+    m_TransformParent: {fileID: 1705276521817080854}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -86,7 +91,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
       propertyPath: m_LocalRotation.y
@@ -114,7 +119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
       propertyPath: m_Name
-      value: Red
+      value: Base Collider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74e0ea2b8388cc045955c309ae9df0a3, type: 3}
@@ -191,6 +196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodBridge
       objectReference: {fileID: 0}
+    - target: {fileID: 2951628623467951749, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: m_TagString
+      value: Tile
+      objectReference: {fileID: 0}
     - target: {fileID: 3128542793861966600, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -201,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3964375127579091120, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: m_TagString
-      value: Amenity
+      value: Tile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}

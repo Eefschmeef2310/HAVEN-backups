@@ -35,7 +35,7 @@ public class TileInitialise : MonoBehaviour
             
         for (int i = 0; i <= surroundingCells.Length - 1; i++)
         {
-            Vector3 sphere = new Vector3(surroundingCells[i].x, 0, surroundingCells[i].y);
+            Vector3 sphere = new Vector3(surroundingCells[i].x, 0, surroundingCells[i].y*0.75f);
 
             if (!Physics.CheckSphere(sphere, 0.1f))
             {
