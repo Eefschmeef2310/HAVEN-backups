@@ -198,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2951628623467951749, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: m_TagString
-      value: Tile
+      value: Amenity
       objectReference: {fileID: 0}
     - target: {fileID: 3128542793861966600, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: m_Enabled
@@ -212,7 +212,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Tile
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3815327774467566882, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
 --- !u!1 &5774239523266056167 stripped
 GameObject:
@@ -236,3 +237,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8849f324586c3e4fb85bdf93c7fbfc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4374564036073752014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5774239523266056167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8ccd9b451211e48bf03b592b7cccb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 1
