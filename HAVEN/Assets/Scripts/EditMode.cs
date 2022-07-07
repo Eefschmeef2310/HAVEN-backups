@@ -30,7 +30,10 @@ public class EditMode : MonoBehaviour
             {
                 foreach (Transform grandChild in child)
                 {
-                    grandChild.gameObject.SetActive(true); //Set base Red to Active
+                    if(grandChild.tag == "Boundary")
+                    {
+                        grandChild.gameObject.SetActive(true); //Set base Red to Active
+                    }
                 }
             }
 

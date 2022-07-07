@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour
     public float minY = 20f;
     public float maxY = 120f;
     private bool snapping;
+    private bool canvasActive;
+    private GameObject snappedObject;
     public Camera cam;
     public TileEditor tileEditor;
     public Pause pauseScreen;
@@ -73,6 +75,30 @@ public class CameraController : MonoBehaviour
                     snapPos = new Vector3(hit.transform.position.x, 3, hit.transform.position.z - 2);
                     //Debug.Log(snapPos);
                     snapping = true;
+                    //Debug.Log(hit.transform.parent.parent.parent.gameObject);
+                    //hit.transform.parent.parent.parent.transform.GetChild(2).gameObject.SetActive(true);
+                    if(snappedObject != null)
+                    {
+                        snappedObject.transform.GetChild(2).gameObject.SetActive(false);
+                    }
+                    snappedObject = hit.transform.parent.parent.parent.gameObject;
+                    snappedObject.transform.GetChild(2).gameObject.SetActive(true);
+                    //Debug.Log(hit.transform.parent.parent.parent.transform.GetChild(2).gameObject.activeSelf);
+                    canvasActive = true;
+                }
+            }
+        }
+
+        if(canvasActive)
+        {
+            snappedObject.transform.GetChild(2).transform.LookAt(Camera.main.transform);
+            if(Input.anyKeyDown && snappedObject != null)
+            {
+                if(! Input.GetMouseButton(0))
+                {
+                    canvasActive = false;
+                    snappedObject.transform.GetChild(2).gameObject.SetActive(false);
+                    //Debug.Log(hit.transform.parent.parent.parent.transform.GetChild(2).gameObject.activeSelf);
                 }
             }
         }
