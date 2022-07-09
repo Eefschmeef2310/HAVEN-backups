@@ -12,6 +12,7 @@ public class TileEditor : MonoBehaviour
     public int tileCount = 1;
     public AnimationCurve dirtNeeded;
     public TextMeshProUGUI dirtNeededText;
+    public Happiness happiness;
 
     public float maxPosX = 1;
     public float minPosX = 0;
@@ -51,7 +52,6 @@ public class TileEditor : MonoBehaviour
                     Resources.resources["Dirt"] -= ((int)dirtNeeded.Evaluate(tileCount));
                     
                     //Debug.Log("Cell placed at " + cell.y);
-                    tileCount++;
                     tileAmount.text = tileCount.ToString();
 
                     if(cell.x >= 0 && cell.x > maxPosX)
@@ -88,11 +88,18 @@ public class TileEditor : MonoBehaviour
                         Resources.resources["Supply Kit"]--;
                         Destroy(hit.transform.parent.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
+                        tileCount++;
                     }
                     else if(building.gameObject.name == "LumberMill" && Resources.resources["Seeds"] >= 1 && Resources.resources["Wood"] >= 1)
                     {
                         Resources.resources["Seeds"]--;
                         Resources.resources["Wood"]--;
+                        Destroy(hit.transform.parent.parent.parent.gameObject);
+                        Instantiate(building, pos, Quaternion.identity, transform.parent);
+                        tileCount++;
+                    }
+                    else if(building.gameObject.name == "WoodBridge")
+                    {
                         Destroy(hit.transform.parent.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
                     }

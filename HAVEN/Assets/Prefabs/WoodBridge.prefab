@@ -152,6 +152,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1276471775164659619, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: m_text
+      value: Wooden Bridge
+      objectReference: {fileID: 0}
     - target: {fileID: 2336563864245169403, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -917,7 +917,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 657479146}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 224377592}
+        m_TargetAssemblyTypeName: ExpeditionPopUp, Assembly-CSharp
+        m_MethodName: OpenExpeditionPopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &657479146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3274,6 +3286,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1597810917815738323, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
+      propertyPath: happy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4379445286132744773, guid: 7d1e1be371b81de42a0b05154c05a6b4, type: 3}
       propertyPath: leveling
       value: 
@@ -5316,7 +5332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1133849728}
   dirt: {fileID: 1227322163}
-  building: {fileID: 445157448}
+  building: {fileID: 341941691}
   hover: {fileID: 199829823}
   tileAmount: {fileID: 1218971297}
   tileCount: 1
@@ -5345,6 +5361,7 @@ MonoBehaviour:
     m_PostInfinity: 1
     m_RotationOrder: 4
   dirtNeededText: {fileID: 695148992}
+  happiness: {fileID: 807849779}
   maxPosX: 1
   minPosX: -1
   maxPosY: -1

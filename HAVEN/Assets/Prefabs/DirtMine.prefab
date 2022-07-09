@@ -96,6 +96,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1276471775164659619, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
+      propertyPath: m_text
+      value: Dirt Mine
+      objectReference: {fileID: 0}
     - target: {fileID: 2336563864245169403, guid: 4005ea10d5bbc124ab5adb6af0a378f1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -180,5 +184,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4bae3362fce344894f41bd8fa2e868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceManager: {fileID: 0}
   incrementDelay: 300
