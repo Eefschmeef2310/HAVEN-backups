@@ -18,4 +18,10 @@ public class HappinessTracker : MonoBehaviour
         happy = true;
         Happiness.happyCount++;
     }
+
+    public void NotHappy()
+    {
+        happy = false;
+        Happiness.happyCount--;
+    }
 }

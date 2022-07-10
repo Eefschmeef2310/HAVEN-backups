@@ -43,14 +43,24 @@ public class TileInitialise : MonoBehaviour
                 Vector3 pos = tilemap.GetCellCenterWorld(surroundingCells[i]);
                 Instantiate(red, pos, Quaternion.Euler(0,30,0), transform.parent);
             }
+            /*
             else //Tile found
             {
                 GameObject tester = Physics.OverlapSphere(sphere,0.1f)[0].gameObject;
                 //Debug.Log(tester);
                 if(tester.gameObject.GetComponentInParent<GenerateHappiness>() != null)
                 {
-                    tester.gameObject.GetComponentInParent<GenerateHappiness>().UpdateHappiness();
+                    tester.gameObject.GetComponentInParent<GenerateHappiness>().Start();
                 }      
+            }
+            */
+        }
+
+        foreach (Transform child in tilemap.transform)
+        {
+            if(child.tag == "Amenity")
+            {
+                child.gameObject.GetComponentInParent<GenerateHappiness>().Start();
             }
         }
     }
