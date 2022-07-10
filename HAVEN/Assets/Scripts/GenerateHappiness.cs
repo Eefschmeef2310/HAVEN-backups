@@ -20,7 +20,7 @@ public class GenerateHappiness : MonoBehaviour
             {
                 if(cells[i].gameObject.transform.parent.parent.parent.GetComponent<HappinessTracker>() != null)
                 {
-                    cells[i].gameObject.transform.parent.parent.parent.GetComponent<HappinessTracker>().happy = true;
+                    cells[i].gameObject.transform.parent.parent.parent.GetComponent<HappinessTracker>().IsHappy();
                 }
             }
         }

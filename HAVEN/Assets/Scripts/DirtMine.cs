@@ -10,7 +10,7 @@ public class DirtMine : MonoBehaviour
     {
         timer += Time.deltaTime;
         float incrementDelay = inputtedDelay/Happiness.happiness;
-        Debug.Log(incrementDelay);
+        //Debug.Log(incrementDelay);
 
         if(timer >= incrementDelay)
         {

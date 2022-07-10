@@ -30,6 +30,8 @@ public class TileEditor : MonoBehaviour
         RaycastHit hit;
 
         dirtNeededText.text = "Dirt Needed: " + (int)dirtNeeded.Evaluate(tileCount);
+        
+        tileAmount.text = tileCount.ToString();
 
         if (Physics.Raycast(ray, out hit))
         {         
@@ -52,7 +54,6 @@ public class TileEditor : MonoBehaviour
                     Resources.resources["Dirt"] -= ((int)dirtNeeded.Evaluate(tileCount));
                     
                     //Debug.Log("Cell placed at " + cell.y);
-                    tileAmount.text = tileCount.ToString();
 
                     if(cell.x >= 0 && cell.x > maxPosX)
                     {
@@ -107,8 +108,11 @@ public class TileEditor : MonoBehaviour
                     {
                         Destroy(hit.transform.parent.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
+                        if(building.gameObject.tag == "Tile")
+                        {
+                            tileCount++;
+                        }
                     }
-                    
                     building.gameObject.SetActive(false);
                 }
             }  

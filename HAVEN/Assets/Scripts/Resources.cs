@@ -8,6 +8,7 @@ public class Resources : MonoBehaviour
     public static Dictionary<string, int> resources = new Dictionary<string, int>();
     //public TextMeshProUGUI test;
     public int dirtAmount;
+    public TextMeshProUGUI test;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,6 @@ public class Resources : MonoBehaviour
         //Debug.Log(resources["Supply Kit"]);
         //resources["Dirt"]++;
         //Debug.Log(resources["Dirt"]);
-        //test.text = "Dirt: " + resources["Dirt"];
+        test.text = "Dirt: " + resources["Dirt"];
     }
 }
