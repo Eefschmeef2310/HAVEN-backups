@@ -55,7 +55,7 @@ public class CameraController : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
                         
-            if (Physics.Raycast(ray, out hit) && (hit.transform.parent.parent.parent.gameObject.tag == "Tile" || hit.transform.gameObject.tag == "Amenity"))
+            if (Physics.Raycast(ray, out hit) && (hit.transform.parent.parent.parent.gameObject.tag == "Tile"))
             {       
                 /*     
                 //Debug.Log(hit.transform.gameObject.name);

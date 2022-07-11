@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using System.Collections;
 
 public class TileInitialise : MonoBehaviour
 {
@@ -36,7 +35,14 @@ public class TileInitialise : MonoBehaviour
         for (int i = 0; i <= surroundingCells.Length - 1; i++)
         {
             Vector3 sphere = new Vector3(surroundingCells[i].x, 0, surroundingCells[i].y*0.75f);
-
+            
+            //TESTING SHIT
+            if(Physics.CheckSphere(sphere, 0.1f) && this.gameObject.name == "DirtMine(Clone)")
+            {
+                Debug.Log(Physics.OverlapSphere(sphere, 0.1f)[0].transform.parent);
+            }
+            
+            
             if (!Physics.CheckSphere(sphere, 0.1f)) //nothing there
             {
                 //Debug.Log("No tile at " + surroundingCells[i]);
@@ -56,11 +62,11 @@ public class TileInitialise : MonoBehaviour
             */
         }
 
-        foreach (Transform child in tilemap.transform)
+        foreach(Transform child in tilemap.transform)
         {
-            if(child.tag == "Amenity")
+            if(child.tag == "Amenity" && child.gameObject.activeSelf)
             {
-                child.gameObject.GetComponentInParent<GenerateHappiness>().Start();
+                child.gameObject.GetComponent<GenerateHappiness>().Start();
             }
         }
     }

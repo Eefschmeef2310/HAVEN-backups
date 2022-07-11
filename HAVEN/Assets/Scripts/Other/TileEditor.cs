@@ -13,6 +13,7 @@ public class TileEditor : MonoBehaviour
     public AnimationCurve dirtNeeded;
     public TextMeshProUGUI dirtNeededText;
     public Happiness happiness;
+    GameObject movingCell = null;
 
     public float maxPosX = 1;
     public float minPosX = 0;
@@ -22,6 +23,7 @@ public class TileEditor : MonoBehaviour
     void Start()
     {
         hover.SetActive(true);
+        hover.transform.rotation = Quaternion.Euler(0, 30, 0);
     }
 
     void Update()
@@ -35,14 +37,13 @@ public class TileEditor : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {         
-            if(hit.collider.gameObject.name == "Red(Clone)")
+            if(hit.collider.gameObject.tag == "Boundary")
             {  
                 hover.transform.position = hit.collider.gameObject.transform.position;
-                hover.transform.rotation = Quaternion.Euler(0, 30, 0);
                 
-                if(Input.GetMouseButtonDown(0) && hit.collider.gameObject.layer != 7 && Resources.resources["Dirt"] >= dirtNeeded.Evaluate(tileCount))
+                if(Input.GetMouseButtonDown(0) && Resources.resources["Dirt"] >= dirtNeeded.Evaluate(tileCount))
                 {
-                    Destroy(hit.collider.gameObject);
+                    Destroy(hit.collider.gameObject); //Destroys the Boundary tile
 
                     Vector3Int cell = tilemap.WorldToCell(hit.point);
                     Vector3 pos = tilemap.GetCellCenterWorld(cell);
@@ -80,6 +81,9 @@ public class TileEditor : MonoBehaviour
             {
                 if(Input.GetMouseButtonDown(0))
                 {
+                    hit.transform.parent.parent.parent.gameObject.SetActive(false);
+                    Destroy(hit.transform.parent.parent.parent.gameObject);
+
                     Vector3 pos = hit.collider.gameObject.transform.position;
 
                     building.gameObject.SetActive(true);
@@ -87,7 +91,6 @@ public class TileEditor : MonoBehaviour
                     if(building.gameObject.name == "DirtMine" && Resources.resources["Supply Kit"] == 1)
                     {
                         Resources.resources["Supply Kit"]--;
-                        Destroy(hit.transform.parent.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
                         tileCount++;
                     }
@@ -95,18 +98,16 @@ public class TileEditor : MonoBehaviour
                     {
                         Resources.resources["Seeds"]--;
                         Resources.resources["Wood"]--;
-                        Destroy(hit.transform.parent.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
                         tileCount++;
                     }
                     else if(building.gameObject.name == "WoodBridge")
                     {
-                        Destroy(hit.transform.parent.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
                     }
                     else
                     {
-                        Destroy(hit.transform.parent.parent.parent.gameObject);
+                        //Debug.Log(hit.transform.parent.parent.parent.gameObject);
                         Instantiate(building, pos, Quaternion.identity, transform.parent);
                         if(building.gameObject.tag == "Tile")
                         {
@@ -116,6 +117,10 @@ public class TileEditor : MonoBehaviour
                     building.gameObject.SetActive(false);
                 }
             }  
+            else if(hit.collider.gameObject.layer == 6)
+            {
+                movingCell = hit.transform.parent.parent.parent.gameObject;
+            }
         }
     }
 }

@@ -26,7 +26,7 @@ public class EditMode : MonoBehaviour
 
         foreach (Transform child in tilemap)
         {
-            if(child.tag == "Tile")
+            if(child.gameObject.layer == 6 || child.gameObject.layer == 7)
             {
                 foreach (Transform grandChild in child)
                 {
@@ -50,15 +50,13 @@ public class EditMode : MonoBehaviour
 
         foreach (Transform child in tilemap)
         {
-            if(child.tag == "Tile")
+            if(child.gameObject.layer == 6 || child.gameObject.layer == 7)
             {
-                foreach (Transform grandChild in child)
-                {
-                    if(grandChild.name == "Red" || grandChild.name == "Red(Clone)")
+                    if(child.tag == "Boundary")
                     {
-                        grandChild.gameObject.SetActive(false); //Set base Red to inactive
+                        child.gameObject.SetActive(false); //Set base Red to inactive
                     }
-                }
+                
             }
             else if(child.name == "Red(Clone)")
             {

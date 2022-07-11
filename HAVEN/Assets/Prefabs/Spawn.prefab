@@ -55,7 +55,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: HexTest
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8549734992816132889, guid: 0ce2e76e5719a924cbcb941be12d0fd1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ce2e76e5719a924cbcb941be12d0fd1, type: 3}
 --- !u!1 &5813250738540644036 stripped
 GameObject:

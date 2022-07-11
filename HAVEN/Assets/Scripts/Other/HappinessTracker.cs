@@ -9,19 +9,24 @@ public class HappinessTracker : MonoBehaviour
         //Debug.Log("test");
         if(happy)
         {
-            Happiness.happyCount++;
+            Happiness.happyList.Clear(); //Possibly may be a placeholder
+            Happiness.happyList.Add(this.gameObject);
+        }
+        else{
+            NotHappy();
         }
     }
 
     public void IsHappy()
     {
         happy = true;
-        Happiness.happyCount++;
+        Happiness.happyList.Add(this.gameObject);
+        //Debug.Log(Happiness.happyList.Count);
     }
 
     public void NotHappy()
     {
         happy = false;
-        Happiness.happyCount--;
+        Happiness.happyList.Remove(this.gameObject);
     }
 }
