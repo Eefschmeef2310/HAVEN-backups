@@ -3816,6 +3816,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4374564036073752014, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
+      propertyPath: size
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5081833488186876016, guid: 97ceb4afacfa2554a82e81c33acba143, type: 3}
       propertyPath: editMode
       value: 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GenerateHappiness : MonoBehaviour
 {
-    public float size;
+    public float size; //0.5 size for only surrounding tiles
     public bool moved;
 
     public void Start()
@@ -36,7 +36,6 @@ public class GenerateHappiness : MonoBehaviour
 
         for(int i = 0; i <= cells.Length - 1; i++)
         {
-            //Debug.Log(cells[i].gameObject.tag);
             if(cells[i].gameObject.transform.parent.name != "Tilemap" && cells[i].gameObject.transform.parent.parent.parent.tag == "Tile" && cells[i].gameObject.tag != "Boundary")
             {
                 if(cells[i].gameObject.transform.parent.parent.parent.GetComponent<HappinessTracker>() != null && !Happiness.happyList.Contains(cells[i].gameObject.transform.parent.parent.parent.gameObject)) //Has a Happiness Tracker and parent tile isn't already in happyList

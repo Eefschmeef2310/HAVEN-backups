@@ -35,19 +35,12 @@ public class TileInitialise : MonoBehaviour
         for (int i = 0; i <= surroundingCells.Length - 1; i++)
         {
             Vector3 sphere = new Vector3(surroundingCells[i].x, 0, surroundingCells[i].y*0.75f);
-            
-            //TESTING SHIT
-            if(Physics.CheckSphere(sphere, 0.1f) && this.gameObject.name == "DirtMine(Clone)")
-            {
-                Debug.Log(Physics.OverlapSphere(sphere, 0.1f)[0].transform.parent);
-            }
-            
-            
+                
             if (!Physics.CheckSphere(sphere, 0.1f)) //nothing there
             {
                 //Debug.Log("No tile at " + surroundingCells[i]);
                 Vector3 pos = tilemap.GetCellCenterWorld(surroundingCells[i]);
-                Instantiate(red, pos, Quaternion.Euler(0,30,0), transform.parent);
+                Instantiate(red, pos, Quaternion.Euler(0,30,0), transform);
             }
             /*
             else //Tile found
