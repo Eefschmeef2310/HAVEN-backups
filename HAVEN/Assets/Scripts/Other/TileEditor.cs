@@ -14,6 +14,7 @@ public class TileEditor : MonoBehaviour
     public TextMeshProUGUI dirtNeededText;
     public Happiness happiness;
     GameObject movingCell = null;
+    public bool isMoving;
 
     public float maxPosX = 1;
     public float minPosX = 0;
@@ -39,45 +40,72 @@ public class TileEditor : MonoBehaviour
         {         
             if(hit.collider.gameObject.tag == "Boundary")
             {  
-                hover.transform.position = hit.collider.gameObject.transform.position;
-                
-                if(Input.GetMouseButtonDown(0) && Resources.resources["Dirt"] >= dirtNeeded.Evaluate(tileCount))
+                if(isMoving)
                 {
-                    Destroy(hit.collider.gameObject); //Destroys the Boundary tile
-
-                    Vector3Int cell = tilemap.WorldToCell(hit.point);
-                    Vector3 pos = tilemap.GetCellCenterWorld(cell);
-
-                    dirt.gameObject.SetActive(true);
-                    Instantiate(dirt, pos, Quaternion.identity, transform.parent);
-                    dirt.gameObject.SetActive(false);
-
-                    Resources.resources["Dirt"] -= ((int)dirtNeeded.Evaluate(tileCount));
-                    
-                    //Debug.Log("Cell placed at " + cell.y);
-
-                    if(cell.x >= 0 && cell.x > maxPosX)
+                    if(Input.GetMouseButtonDown(0))
                     {
-                        maxPosX = cell.x;
-                    }
+                        isMoving = false;
+                        Vector3 tempPos = movingCell.transform.position;
 
-                    if(cell.x < 0 && cell.x < minPosX)
-                    {
-                        minPosX = cell.x;
-                    }
+                        foreach(Transform child in movingCell.transform)
+                        {
+                            if(child.name == "Red(Clone)") //May have to change name later
+                            {
+                                child.gameObject.SetActive(false);
+                                Destroy(child.gameObject);
+                            }
+                        }
+                        
+                        movingCell.transform.position = hit.transform.position;
+                        hit.transform.position = tempPos;
 
-                    if(cell.y >= 0 && cell.y > maxPosY)
-                    {
-                        maxPosY = cell.y;
-                    }
+                        movingCell.GetComponent<TileInitialise>().Start();
 
-                    if(cell.y < 0 && cell.y < minPosY)
-                    {
-                        minPosY = cell.y;
+                        movingCell = null;
                     }
                 }
+                else
+                {
+                    hover.transform.position = hit.collider.gameObject.transform.position;
+                
+                    if(Input.GetMouseButtonDown(0) && Resources.resources["Dirt"] >= dirtNeeded.Evaluate(tileCount))
+                    {
+                        Destroy(hit.collider.gameObject); //Destroys the Boundary tile
+
+                        Vector3Int cell = tilemap.WorldToCell(hit.point);
+                        Vector3 pos = tilemap.GetCellCenterWorld(cell);
+
+                        dirt.gameObject.SetActive(true);
+                        Instantiate(dirt, pos, Quaternion.identity, transform.parent);
+                        dirt.gameObject.SetActive(false);
+
+                        Resources.resources["Dirt"] -= ((int)dirtNeeded.Evaluate(tileCount));
+                        
+                        //Debug.Log("Cell placed at " + cell.y);
+
+                        if(cell.x >= 0 && cell.x > maxPosX)
+                        {
+                            maxPosX = cell.x;
+                        }
+
+                        if(cell.x < 0 && cell.x < minPosX)
+                        {
+                            minPosX = cell.x;
+                        }
+
+                        if(cell.y >= 0 && cell.y > maxPosY)
+                        {
+                            maxPosY = cell.y;
+                        }
+
+                        if(cell.y < 0 && cell.y < minPosY)
+                        {
+                            minPosY = cell.y;
+                        }
+                    }
+                } 
             }   
-            else if (hit.collider.gameObject.layer == 7)
+            else if(hit.collider.gameObject.layer == 7)
             {
                 if(Input.GetMouseButtonDown(0))
                 {
@@ -119,7 +147,46 @@ public class TileEditor : MonoBehaviour
             }  
             else if(hit.collider.gameObject.layer == 6)
             {
-                movingCell = hit.transform.parent.parent.parent.gameObject;
+                if(Input.GetMouseButtonDown(0))
+                {
+                    if(isMoving == false)
+                    {
+                        isMoving = true;
+                        movingCell = hit.transform.parent.parent.parent.gameObject;
+                    }
+                    else
+                    {
+                        isMoving = false;
+                        GameObject hitCell = hit.transform.parent.parent.parent.gameObject;
+                        Vector3 tempPos = movingCell.transform.position;
+
+                        foreach(Transform child in movingCell.transform)
+                        {
+                            if(child.name == "Red(Clone)") //May have to change name later
+                            {
+                                child.gameObject.SetActive(false);
+                                Destroy(child.gameObject);
+                            }
+                        }
+
+                        foreach(Transform child in hitCell.transform)
+                        {
+                            if(child.name == "Red(Clone)") //May have to change name later
+                            {
+                                child.gameObject.SetActive(false);
+                                Destroy(child.gameObject);
+                            }
+                        }
+                        
+                        movingCell.transform.position = hitCell.transform.position;
+                        hitCell.transform.position = tempPos;
+
+                        movingCell.GetComponent<TileInitialise>().Start();
+                        hitCell.GetComponent<TileInitialise>().Start();
+
+                        movingCell = null;
+                    }
+                }  
             }
         }
     }

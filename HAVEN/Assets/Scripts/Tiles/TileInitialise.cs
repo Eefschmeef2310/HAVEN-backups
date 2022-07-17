@@ -6,7 +6,7 @@ public class TileInitialise : MonoBehaviour
     public int experience;
     public Leveling leveling;
 
-    void Start()
+    public void Start()
     {
         Tilemap tilemap = transform.parent.GetComponent<Tilemap>();
         Transform red = gameObject.transform.Find("Red");
