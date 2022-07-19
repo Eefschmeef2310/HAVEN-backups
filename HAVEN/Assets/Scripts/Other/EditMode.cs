@@ -52,13 +52,16 @@ public class EditMode : MonoBehaviour
         {
             if(child.gameObject.layer == 6 || child.gameObject.layer == 7)
             {
-                    if(child.tag == "Boundary")
+                foreach (Transform grandChild in child)
+                {
+                    if(grandChild.tag == "Boundary")
                     {
-                        child.gameObject.SetActive(false); //Set base Red to inactive
+                        grandChild.gameObject.SetActive(false); //Set base Red to Active
                     }
-                
+                }                
             }
-            else if(child.name == "Red(Clone)")
+
+            if(child.name == "Red(Clone)")
             {
                 child.gameObject.SetActive(false);
             }

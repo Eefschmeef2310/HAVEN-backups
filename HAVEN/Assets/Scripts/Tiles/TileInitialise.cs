@@ -5,6 +5,7 @@ public class TileInitialise : MonoBehaviour
 {
     public int experience;
     public Leveling leveling;
+    public Vector3Int[] surroundingCells;
 
     public void Start()
     {
@@ -15,12 +16,14 @@ public class TileInitialise : MonoBehaviour
 
         Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
 
-        Vector3Int[] surroundingCells = {cellPosition + Vector3Int.up, 
-            cellPosition + Vector3Int.right, 
-            cellPosition + Vector3Int.down, 
-            cellPosition + Vector3Int.down + Vector3Int.left, 
-            cellPosition + Vector3Int.left, 
-            cellPosition + Vector3Int.left + Vector3Int.up};
+        surroundingCells = new Vector3Int[6];
+
+        surroundingCells[0] = cellPosition + Vector3Int.up; 
+        surroundingCells[1] = cellPosition + Vector3Int.right; 
+        surroundingCells[2] = cellPosition + Vector3Int.down;
+        surroundingCells[3] = cellPosition + Vector3Int.down + Vector3Int.left;
+        surroundingCells[4] = cellPosition + Vector3Int.left;
+        surroundingCells[5] = cellPosition + Vector3Int.left + Vector3Int.up;
 
         if (cellPosition.x != surroundingCells[3].x && cellPosition.y % 2 != 0)
         {

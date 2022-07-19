@@ -47,21 +47,48 @@ public class TileEditor : MonoBehaviour
                         isMoving = false;
                         Vector3 tempPos = movingCell.transform.position;
 
+                        //Deactivates and destroys all boundary clones
                         foreach(Transform child in movingCell.transform)
                         {
-                            if(child.name == "Red(Clone)") //May have to change name later
+                            if(child.name == "Red(Clone)" && child != hit.transform) //May have to change name later
                             {
                                 child.gameObject.SetActive(false);
                                 Destroy(child.gameObject);
                             }
                         }
-                        
-                        movingCell.transform.position = hit.transform.position;
-                        hit.transform.position = tempPos;
 
-                        movingCell.GetComponent<TileInitialise>().Start();
+                        //If the boundary is not a child of the moving tile, set it as the child of the first surrounding tile
+                        if(hit.transform.parent != movingCell.transform)
+                        {
+                            foreach(Vector3Int cell in movingCell.GetComponent<TileInitialise>().surroundingCells)
+                            {
+                                Vector3 sphere = new Vector3(cell.x, 0, cell.y*0.75f);
+                    
+                                if(Physics.CheckSphere(sphere, 0.1f)) //nothing there
+                                {
+                                    Vector3 pos = tilemap.GetCellCenterWorld(cell);
 
-                        movingCell = null;
+                                    if(Physics.OverlapSphere(pos,0.1f)[0].tag != "Boundary")
+                                    {
+                                        hit.collider.transform.SetParent(Physics.OverlapSphere(pos,0.1f)[0].transform.parent.parent.parent);
+                                        break;
+                                    }
+                                }
+                            }
+
+                            Debug.Log("Valid Swap");
+
+                            movingCell.transform.position = hit.transform.position;
+                            hit.transform.position = tempPos;
+
+                            movingCell.GetComponent<TileInitialise>().Start();
+                        }
+                        else
+                        {
+                            Debug.Log("Invalid Swap");
+                            movingCell.GetComponent<TileInitialise>().Start();
+                            isMoving = true;
+                        }
                     }
                 }
                 else
@@ -149,7 +176,7 @@ public class TileEditor : MonoBehaviour
             {
                 if(Input.GetMouseButtonDown(0))
                 {
-                    if(isMoving == false)
+                    if(!isMoving)
                     {
                         isMoving = true;
                         movingCell = hit.transform.parent.parent.parent.gameObject;

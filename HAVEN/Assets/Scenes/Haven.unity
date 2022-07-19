@@ -8023,7 +8023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12db9178e1f1586409d80f9d21bebeaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panSpeed: 50
+  panSpeed: 100
   panlimit: {x: 10, y: 1}
   scrollSpeed: 1000
   minY: 3
@@ -8222,6 +8222,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dirtNeededText: {fileID: 695148992}
   happiness: {fileID: 807849779}
+  isMoving: 0
   maxPosX: 1
   minPosX: -1
   maxPosY: -1
