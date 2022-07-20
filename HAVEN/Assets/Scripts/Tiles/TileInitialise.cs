@@ -7,12 +7,16 @@ public class TileInitialise : MonoBehaviour
     public Leveling leveling;
     public Vector3Int[] surroundingCells;
 
-    public void Start()
+    void Start()
+    {
+        leveling.experience += experience;
+        InitialiseTile();
+    }
+
+    public void InitialiseTile()
     {
         Tilemap tilemap = transform.parent.GetComponent<Tilemap>();
-        Transform red = gameObject.transform.Find("Red");
-
-        leveling.experience += experience;
+        Transform red = gameObject.transform.Find("Red");        
 
         Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
 

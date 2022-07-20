@@ -81,12 +81,12 @@ public class TileEditor : MonoBehaviour
                             movingCell.transform.position = hit.transform.position;
                             hit.transform.position = tempPos;
 
-                            movingCell.GetComponent<TileInitialise>().Start();
+                            movingCell.GetComponent<TileInitialise>().InitialiseTile();
                         }
                         else
                         {
                             Debug.Log("Invalid Swap");
-                            movingCell.GetComponent<TileInitialise>().Start();
+                            movingCell.GetComponent<TileInitialise>().InitialiseTile();
                             isMoving = true;
                         }
                     }
@@ -208,8 +208,8 @@ public class TileEditor : MonoBehaviour
                         movingCell.transform.position = hitCell.transform.position;
                         hitCell.transform.position = tempPos;
 
-                        movingCell.GetComponent<TileInitialise>().Start();
-                        hitCell.GetComponent<TileInitialise>().Start();
+                        movingCell.GetComponent<TileInitialise>().InitialiseTile();
+                        hitCell.GetComponent<TileInitialise>().InitialiseTile();
 
                         movingCell = null;
                     }
