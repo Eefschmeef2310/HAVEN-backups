@@ -5,11 +5,15 @@ public class TileInitialise : MonoBehaviour
 {
     public int experience;
     public Leveling leveling;
-    public Vector3Int[] surroundingCells;
+    [HideInInspector] public Vector3Int[] surroundingCells;
 
     void Start()
     {
         leveling.experience += experience;
+        if(this.gameObject.tag == "Amenity")
+        {
+            this.gameObject.GetComponent<BridgeSwivel>().SwivelBridge();
+        }
         InitialiseTile();
     }
 

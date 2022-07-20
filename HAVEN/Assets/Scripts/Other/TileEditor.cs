@@ -15,6 +15,7 @@ public class TileEditor : MonoBehaviour
     public Happiness happiness;
     GameObject movingCell = null;
     public bool isMoving;
+    public Camera cam;
 
     public float maxPosX = 1;
     public float minPosX = 0;
@@ -183,35 +184,38 @@ public class TileEditor : MonoBehaviour
                     }
                     else
                     {
-                        isMoving = false;
-                        GameObject hitCell = hit.transform.parent.parent.parent.gameObject;
-                        Vector3 tempPos = movingCell.transform.position;
-
-                        foreach(Transform child in movingCell.transform)
+                        if(!movingCell.transform.GetChild(2).gameObject.activeSelf)
                         {
-                            if(child.name == "Red(Clone)") //May have to change name later
+                            isMoving = false;
+                            GameObject hitCell = hit.transform.parent.parent.parent.gameObject;
+                            Vector3 tempPos = movingCell.transform.position;
+
+                            foreach(Transform child in movingCell.transform)
                             {
-                                child.gameObject.SetActive(false);
-                                Destroy(child.gameObject);
+                                if(child.name == "Red(Clone)") //May have to change name later
+                                {
+                                    child.gameObject.SetActive(false);
+                                    Destroy(child.gameObject);
+                                }
                             }
-                        }
 
-                        foreach(Transform child in hitCell.transform)
-                        {
-                            if(child.name == "Red(Clone)") //May have to change name later
+                            foreach(Transform child in hitCell.transform)
                             {
-                                child.gameObject.SetActive(false);
-                                Destroy(child.gameObject);
+                                if(child.name == "Red(Clone)") //May have to change name later
+                                {
+                                    child.gameObject.SetActive(false);
+                                    Destroy(child.gameObject);
+                                }
                             }
+                            
+                            movingCell.transform.position = hitCell.transform.position;
+                            hitCell.transform.position = tempPos;
+
+                            movingCell.GetComponent<TileInitialise>().InitialiseTile();
+                            hitCell.GetComponent<TileInitialise>().InitialiseTile();
+
+                            movingCell = null;
                         }
-                        
-                        movingCell.transform.position = hitCell.transform.position;
-                        hitCell.transform.position = tempPos;
-
-                        movingCell.GetComponent<TileInitialise>().InitialiseTile();
-                        hitCell.GetComponent<TileInitialise>().InitialiseTile();
-
-                        movingCell = null;
                     }
                 }  
             }

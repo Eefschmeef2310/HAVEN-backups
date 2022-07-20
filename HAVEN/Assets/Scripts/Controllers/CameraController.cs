@@ -55,35 +55,18 @@ public class CameraController : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
                         
-            if (Physics.Raycast(ray, out hit) && (hit.transform.parent.parent.parent.gameObject.tag == "Tile"))
+            if (Physics.Raycast(ray, out hit) && (hit.transform.parent.parent.parent.gameObject.layer == 6 || hit.transform.parent.parent.parent.gameObject.layer == 7))
             {       
-                /*     
-                //Debug.Log(hit.transform.gameObject.name);
-
-                //Debug.Log(hit.transform.gameObject.GetComponentInChildren<Material>());
-
-                foreach(Transform child in hit.transform.parent)
-                {
-                    //child.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-                }
-                */
-
                 if(Input.GetMouseButtonDown(0))
                 {
-                    //Debug.Log(new Vector3(hit.transform.position.x, 3, hit.transform.position.z - 2));
-                    //transform.position = new Vector3(hit.transform.position.x, 3, hit.transform.position.z - 2);
                     snapPos = new Vector3(hit.transform.position.x, 3, hit.transform.position.z - 2);
-                    //Debug.Log(snapPos);
                     snapping = true;
-                    //Debug.Log(hit.transform.parent.parent.parent.gameObject);
-                    //hit.transform.parent.parent.parent.transform.GetChild(2).gameObject.SetActive(true);
                     if(snappedObject != null)
                     {
                         snappedObject.transform.GetChild(2).gameObject.SetActive(false);
                     }
                     snappedObject = hit.transform.parent.parent.parent.gameObject;
                     snappedObject.transform.GetChild(2).gameObject.SetActive(true);
-                    //Debug.Log(hit.transform.parent.parent.parent.transform.GetChild(2).gameObject.activeSelf);
                     canvasActive = true;
                 }
             }
@@ -91,14 +74,13 @@ public class CameraController : MonoBehaviour
 
         if(canvasActive)
         {
-            snappedObject.transform.GetChild(2).transform.LookAt(Camera.main.transform);
+            snappedObject.transform.GetChild(2).transform.LookAt(Camera.main.transform); //activates the In-world pop-up
             if(Input.anyKeyDown && snappedObject != null)
             {
-                if(! Input.GetMouseButton(0))
+                if(!Input.GetMouseButton(0))
                 {
                     canvasActive = false;
                     snappedObject.transform.GetChild(2).gameObject.SetActive(false);
-                    //Debug.Log(hit.transform.parent.parent.parent.transform.GetChild(2).gameObject.activeSelf);
                 }
             }
         }
@@ -144,7 +126,6 @@ public class CameraController : MonoBehaviour
             transform.position = snapPos;
             if(transform.position == snapPos)
             {
-                //Debug.Log("test");
                 snapping = false;
             }
         }

@@ -4,7 +4,7 @@ using UnityEngine.Tilemaps;
 public class BridgeSwivel : MonoBehaviour
 {
     //This program needs to get surrounding cells, check which is the FIRST that has a tile, then swivel the bridge that way
-    void Start()
+    public void SwivelBridge()
     {
         Tilemap tilemap = transform.parent.GetComponent<Tilemap>();
         Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
