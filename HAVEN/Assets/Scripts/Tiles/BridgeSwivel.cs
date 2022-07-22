@@ -8,8 +8,6 @@ public class BridgeSwivel : MonoBehaviour
     {
         Tilemap tilemap = transform.parent.GetComponent<Tilemap>();
         Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
-
-        //Debug.Log(cellPosition.y);
         
         Vector3Int[] surroundingCells = {cellPosition + Vector3Int.up, 
             cellPosition + Vector3Int.right, 
@@ -28,62 +26,103 @@ public class BridgeSwivel : MonoBehaviour
             surroundingCells[5] = cellPosition + Vector3Int.right + Vector3Int.up;
         }
 
+        bool swiveledToTile = false;
+
         for (int i = 0; i <= surroundingCells.Length - 1; i++)
         {
-            Vector3 sphere = new Vector3(surroundingCells[i].x, 0, surroundingCells[i].y*0.75f);  
-            // && Physics.OverlapSphere(sphere,0.1f)[0].gameObject.tag != "Amenity"          
+            Vector3 pos = tilemap.GetCellCenterWorld(surroundingCells[i]);   
 
-            if (Physics.OverlapSphere(sphere,0.1f)[0].gameObject.transform.parent.parent.tag == "Tile")
+            if (Physics.CheckSphere(pos,0.1f))
             {
-                if(i == 2 || i == 5)
+                foreach(Collider collider in Physics.OverlapSphere(pos,0.1f))
                 {
-                    transform.rotation = Quaternion.Euler(0, 60*(i+1), 0);
-                    return;
-                }
-                else if (i == 3 || i == 0)
-                {
-                    transform.rotation = Quaternion.Euler(0, 60*(i-1), 0);
-                    return;
-                }
-                else
-                {
-                    transform.rotation = Quaternion.Euler(0, 60*(i), 0);
-                    return;
-                }
-                //Debug.Log(i);
-                /*
-                if(cellPosition.x % 2 == 0)
-                {
-                    if(cellPosition.y < 0)
+                    if(collider.tag != "Boundary" && collider.transform.parent.parent.parent.tag == "Tile")
                     {
-                        Debug.Log("a");
-                        transform.rotation = Quaternion.Euler(0, 60*(i-1), 0);
-                        return;
-                    }
-                    else
-                    {
-                        Debug.Log("b");
-                        transform.rotation = Quaternion.Euler(0, 60*(i+1), 0);
-                        return;
+                        if(i == 2 || i == 5)
+                        {
+                            //Debug.Log("i is 2 or 5");
+                            swiveledToTile = true;
+                            transform.rotation = Quaternion.Euler(0, 60*(i+1), 0);
+                            break;
+                        }
+                        else if (i == 3 || i == 0)
+                        {
+                            //Debug.Log("i is 3 or 0");
+                            swiveledToTile = true;
+                            transform.rotation = Quaternion.Euler(0, 60*(i-1), 0);
+                            break;
+                        }
+                        else
+                        {
+                            //Debug.Log("i is 1 or 4");
+                            swiveledToTile = true;
+                            transform.rotation = Quaternion.Euler(0, 60*(i), 0);
+                            break;
+                        }
                     }
                 }
-                else
-                {
-                    if(cellPosition.x < 0)
-                    {
-                        Debug.Log("c");
-                        transform.rotation = Quaternion.Euler(0, 60*(i+1), 0);
-                        return;
-                    }
-                    else
-                    {
-                        Debug.Log("d");
-                        transform.rotation = Quaternion.Euler(0, 60*(i), 0);
-                        return;
-                    } 
-                }
-                */
             }            
+        }
+
+        if(!swiveledToTile) //Since there are no tiles, move onto amenities, so a chain of bridges is possible
+        {
+            //Debug.Log("testing bridges");
+            for(int j = 0; j <= surroundingCells.Length - 1; j++)
+            {
+                Vector3 pos = tilemap.GetCellCenterWorld(surroundingCells[j]);  
+                //Debug.Log(sphere);
+
+                if (Physics.CheckSphere(pos,0.1f))
+                {
+                    //Debug.Log(pos);
+                    foreach(Collider collider in Physics.OverlapSphere(pos,0.1f))
+                    {
+                        //Debug.Log(j);
+                        //Debug.Log(collider.name + ", " + collider.tag + ", " + collider.transform.parent.parent.parent.tag);
+                        if(collider.tag != "Boundary" && collider.transform.parent.parent.parent.tag == "Amenity")
+                        {
+                            if(cellPosition.y%2 == 0)
+                            {
+                                Debug.Log("test");
+                                swiveledToTile = true;
+                                transform.rotation = Quaternion.Euler(0, 60*(j), 0);
+                                break;
+                            }
+                            else
+                            {
+                                Debug.Log("test2");
+                                swiveledToTile = true;
+                                transform.rotation = Quaternion.Euler(0, 60*(j-1), 0);
+                                break;
+                            }
+                            //Debug.Log(collider.name);
+                            /*
+                            if(j == 2 || j == 5)
+                            {
+                                //Debug.Log("j is 2 or 5");
+                                swiveledToTile = true;
+                                transform.rotation = Quaternion.Euler(0, 60*(j), 0);
+                                break;
+                            }
+                            else if (j == 3 || j == 0)
+                            {
+                                Debug.Log("j is 3 or 0");
+                                swiveledToTile = true;
+                                transform.rotation = Quaternion.Euler(0, 60*(j), 0);
+                                break;
+                            }
+                            else
+                            {
+                                //Debug.Log("j is 1 or 4");
+                                swiveledToTile = true;
+                                transform.rotation = Quaternion.Euler(0, 60*(j), 0);
+                                break;
+                            }
+                            */
+                        }
+                    }
+                }
+            }
         }
     }
 }

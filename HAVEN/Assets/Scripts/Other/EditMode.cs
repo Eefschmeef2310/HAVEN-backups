@@ -20,7 +20,7 @@ public class EditMode : MonoBehaviour
         }
     }
 
-    void enterEdit()
+    public void enterEdit()
     {
         editing = true;
 
@@ -36,15 +36,10 @@ public class EditMode : MonoBehaviour
                     }
                 }
             }
-
-            if(child.name == "Red(Clone)")
-            {
-                child.gameObject.SetActive(true); //Turn on all surrounding tiles
-            }
         }
     }
 
-    void exitEdit()
+    public void exitEdit()
     {
         editing = false;
 
@@ -59,11 +54,6 @@ public class EditMode : MonoBehaviour
                         grandChild.gameObject.SetActive(false); //Set base Red to Active
                     }
                 }                
-            }
-
-            if(child.name == "Red(Clone)")
-            {
-                child.gameObject.SetActive(false);
             }
         }
     }

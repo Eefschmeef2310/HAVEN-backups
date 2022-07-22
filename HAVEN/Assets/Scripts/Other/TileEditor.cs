@@ -63,12 +63,10 @@ public class TileEditor : MonoBehaviour
                         {
                             foreach(Vector3Int cell in movingCell.GetComponent<TileInitialise>().surroundingCells)
                             {
-                                Vector3 sphere = new Vector3(cell.x, 0, cell.y*0.75f);
+                                Vector3 pos = tilemap.GetCellCenterWorld(cell);
                     
-                                if(Physics.CheckSphere(sphere, 0.1f)) //nothing there
+                                if(Physics.CheckSphere(pos, 0.1f)) //nothing there
                                 {
-                                    Vector3 pos = tilemap.GetCellCenterWorld(cell);
-
                                     if(Physics.OverlapSphere(pos,0.1f)[0].tag != "Boundary")
                                     {
                                         hit.collider.transform.SetParent(Physics.OverlapSphere(pos,0.1f)[0].transform.parent.parent.parent);
