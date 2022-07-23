@@ -80,12 +80,24 @@ public class TileEditor : MonoBehaviour
                             movingCell.transform.position = hit.transform.position;
                             hit.transform.position = tempPos;
 
-                            movingCell.GetComponent<TileInitialise>().InitialiseTile();
+                            foreach(Transform child in tilemap.transform)
+                            {
+                                if(child.tag == "Tile" && child.gameObject.activeSelf)
+                                {
+                                    child.gameObject.GetComponent<TileInitialise>().InitialiseTile();
+                                }
+                            }
                         }
                         else
                         {
                             Debug.Log("Invalid Swap");
-                            movingCell.GetComponent<TileInitialise>().InitialiseTile();
+                            foreach(Transform child in tilemap.transform)
+                            {
+                                if(child.tag == "Tile" && child.gameObject.activeSelf)
+                                {
+                                    child.gameObject.GetComponent<TileInitialise>().InitialiseTile();
+                                }
+                            }
                             isMoving = true;
                         }
                     }
@@ -209,8 +221,13 @@ public class TileEditor : MonoBehaviour
                             movingCell.transform.position = hitCell.transform.position;
                             hitCell.transform.position = tempPos;
 
-                            movingCell.GetComponent<TileInitialise>().InitialiseTile();
-                            hitCell.GetComponent<TileInitialise>().InitialiseTile();
+                            foreach(Transform child in tilemap.transform)
+                            {
+                                if(child.tag == "Tile" && child.gameObject.activeSelf)
+                                {
+                                    child.gameObject.GetComponent<TileInitialise>().InitialiseTile();
+                                }
+                            }
 
                             movingCell = null;
                         }

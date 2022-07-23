@@ -10,11 +10,11 @@ public class TileInitialise : MonoBehaviour
     void Start()
     {
         leveling.experience += experience;
-        if(this.gameObject.tag == "Amenity")
+        if(gameObject.name == "WoodBridge(Clone)")
         {
-            this.gameObject.GetComponent<BridgeSwivel>().SwivelBridge();
+            gameObject.GetComponent<BridgeSwivel>().SwivelBridge();
         }
-        InitialiseTile();
+        InitialiseTile(); 
     }
 
     public void InitialiseTile()
@@ -42,28 +42,15 @@ public class TileInitialise : MonoBehaviour
         {
             surroundingCells[5] = cellPosition + Vector3Int.right + Vector3Int.up;
         }
-            
+
         for (int i = 0; i <= surroundingCells.Length - 1; i++)
         {
             Vector3 pos = tilemap.GetCellCenterWorld(surroundingCells[i]);
-                
+        
             if (!Physics.CheckSphere(pos, 0.1f)) //nothing there
             {
-                //Debug.Log("No tile at " + surroundingCells[i]);
-                //Vector3 pos = tilemap.GetCellCenterWorld(surroundingCells[i]);
                 Instantiate(red, pos, Quaternion.Euler(0,30,0), transform);
             }
-            /*
-            else //Tile found
-            {
-                GameObject tester = Physics.OverlapSphere(sphere,0.1f)[0].gameObject;
-                //Debug.Log(tester);
-                if(tester.gameObject.GetComponentInParent<GenerateHappiness>() != null)
-                {
-                    tester.gameObject.GetComponentInParent<GenerateHappiness>().Start();
-                }      
-            }
-            */
         }
 
         foreach(Transform child in tilemap.transform)

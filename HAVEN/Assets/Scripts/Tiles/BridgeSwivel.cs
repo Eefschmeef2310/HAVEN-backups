@@ -3,11 +3,12 @@ using UnityEngine.Tilemaps;
 
 public class BridgeSwivel : MonoBehaviour
 {
-    //This program needs to get surrounding cells, check which is the FIRST that has a tile, then swivel the bridge that way
+    //This program needs to get surrounding cells, check which is the FIRST that has a tile, then swivel the bridge that way. (23/7/22 completion)
     public void SwivelBridge()
     {
         Tilemap tilemap = transform.parent.GetComponent<Tilemap>();
         Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
+        Transform red = gameObject.transform.Find("Red");
         
         Vector3Int[] surroundingCells = {cellPosition + Vector3Int.up, 
             cellPosition + Vector3Int.right, 
@@ -42,7 +43,22 @@ public class BridgeSwivel : MonoBehaviour
                         {
                             //Debug.Log("i is 2 or 5");
                             swiveledToTile = true;
-                            transform.rotation = Quaternion.Euler(0, 60*(i+1), 0);
+                            transform.rotation = Quaternion.Euler(0, 60*(i+1), 0); //Rotate the object
+
+                            /*//Create Red(Clones)
+                            Vector3 inPos = tilemap.GetCellCenterWorld(surroundingCells[5]);
+                            if(!Physics.CheckSphere(inPos, 0.1f))
+                            {
+                                Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                            }
+
+                            inPos = tilemap.GetCellCenterWorld(surroundingCells[2]);
+                            if(!Physics.CheckSphere(inPos, 0.1f))
+                            {
+                                Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                            }
+                            */
+
                             break;
                         }
                         else if (i == 3 || i == 0)
@@ -50,6 +66,21 @@ public class BridgeSwivel : MonoBehaviour
                             //Debug.Log("i is 3 or 0");
                             swiveledToTile = true;
                             transform.rotation = Quaternion.Euler(0, 60*(i-1), 0);
+
+                            /*//Create Red(Clones)
+                            Vector3 inPos = tilemap.GetCellCenterWorld(surroundingCells[3]);
+                            if(!Physics.CheckSphere(inPos, 0.1f))
+                            {
+                                Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                            }
+
+                            inPos = tilemap.GetCellCenterWorld(surroundingCells[0]);
+                            if(!Physics.CheckSphere(inPos, 0.1f))
+                            {
+                                Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                            }
+                            */
+
                             break;
                         }
                         else
@@ -57,6 +88,21 @@ public class BridgeSwivel : MonoBehaviour
                             //Debug.Log("i is 1 or 4");
                             swiveledToTile = true;
                             transform.rotation = Quaternion.Euler(0, 60*(i), 0);
+
+                            /*//Create Red(Clones)
+                            Vector3 inPos = tilemap.GetCellCenterWorld(surroundingCells[1]);
+                            if(!Physics.CheckSphere(inPos, 0.1f))
+                            {
+                                Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                            }
+
+                            inPos = tilemap.GetCellCenterWorld(surroundingCells[4]);
+                            if(!Physics.CheckSphere(inPos, 0.1f))
+                            {
+                                Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                            }
+                            */
+
                             break;
                         }
                     }
@@ -86,39 +132,70 @@ public class BridgeSwivel : MonoBehaviour
                                 Debug.Log("test");
                                 swiveledToTile = true;
                                 transform.rotation = Quaternion.Euler(0, 60*(j), 0);
+
+                                /*//Create Red(Clones)
+                                Vector3 inPos = tilemap.GetCellCenterWorld(surroundingCells[0]);
+                                if(!Physics.CheckSphere(inPos, 0.1f))
+                                {
+                                    Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                                }
+
+                                inPos = tilemap.GetCellCenterWorld(surroundingCells[3]);
+                                if(!Physics.CheckSphere(inPos, 0.1f))
+                                {
+                                    Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                                }
+                                */
+                                
                                 break;
                             }
                             else
                             {
-                                Debug.Log("test2");
-                                swiveledToTile = true;
-                                transform.rotation = Quaternion.Euler(0, 60*(j-1), 0);
-                                break;
+                                if((cellPosition.x > 0 && cellPosition.y > 0) || (cellPosition.x < 0 && cellPosition.y < 0))
+                                {
+                                    Debug.Log("test2");
+                                    swiveledToTile = true;
+                                    transform.rotation = Quaternion.Euler(0, 60*(j+1), 0);
+
+                                    /*//Create Red(Clones)
+                                    Vector3 inPos = tilemap.GetCellCenterWorld(surroundingCells[5]);
+                                    if(!Physics.CheckSphere(inPos, 0.1f))
+                                    {
+                                        Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                                    }
+
+                                    inPos = tilemap.GetCellCenterWorld(surroundingCells[2]);
+                                    if(!Physics.CheckSphere(inPos, 0.1f))
+                                    {
+                                        Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                                    }
+                                    */
+
+                                    break;
+                                }
+                                else
+                                {
+                                    Debug.Log("test3");
+                                    swiveledToTile = true;
+                                    transform.rotation = Quaternion.Euler(0, 60*(j-1), 0);
+
+                                    /*//Create Red(Clones)
+                                    Vector3 inPos = tilemap.GetCellCenterWorld(surroundingCells[5]);
+                                    if(!Physics.CheckSphere(inPos, 0.1f))
+                                    {
+                                        Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                                    }
+
+                                    inPos = tilemap.GetCellCenterWorld(surroundingCells[2]);
+                                    if(!Physics.CheckSphere(inPos, 0.1f))
+                                    {
+                                        Instantiate(red, inPos, Quaternion.Euler(0,30,0), transform);
+                                    }
+                                    */
+
+                                    break;
+                                }
                             }
-                            //Debug.Log(collider.name);
-                            /*
-                            if(j == 2 || j == 5)
-                            {
-                                //Debug.Log("j is 2 or 5");
-                                swiveledToTile = true;
-                                transform.rotation = Quaternion.Euler(0, 60*(j), 0);
-                                break;
-                            }
-                            else if (j == 3 || j == 0)
-                            {
-                                Debug.Log("j is 3 or 0");
-                                swiveledToTile = true;
-                                transform.rotation = Quaternion.Euler(0, 60*(j), 0);
-                                break;
-                            }
-                            else
-                            {
-                                //Debug.Log("j is 1 or 4");
-                                swiveledToTile = true;
-                                transform.rotation = Quaternion.Euler(0, 60*(j), 0);
-                                break;
-                            }
-                            */
                         }
                     }
                 }
