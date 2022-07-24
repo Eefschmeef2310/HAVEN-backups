@@ -143,7 +143,7 @@ public class TileEditor : MonoBehaviour
                     }
                 } 
             }   
-            else if(hit.collider.gameObject.layer == 7)
+            else if(hit.collider.gameObject.layer == 7) //Dirt
             {
                 if(Input.GetMouseButtonDown(0))
                 {
@@ -183,7 +183,7 @@ public class TileEditor : MonoBehaviour
                     building.gameObject.SetActive(false);
                 }
             }  
-            else if(hit.collider.gameObject.layer == 6)
+            else if(hit.collider.gameObject.layer == 6) //Tile (for moving)
             {
                 if(Input.GetMouseButtonDown(0))
                 {

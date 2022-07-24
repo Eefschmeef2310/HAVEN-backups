@@ -16,11 +16,12 @@ public class Happiness : MonoBehaviour
         happiness = 0;
     }
 
-    void Update() //Should probably be changed to a function that is updated only when amenities are added
+    public void Update() //Should probably be changed to a function that is updated only when amenities are added
     {
         //happyCount = tileEditor.tileCount;
-        //Debug.Log(happyList.ToString());
+        //Debug.Log(happyList.Count);
         happiness = (float)happyList.Count/tileEditor.tileCount;
+        //Debug.Log(happiness);
         happinessText.text = (happiness*100).ToString();
     }
 }

@@ -67,6 +67,12 @@ public class CameraController : MonoBehaviour
                     }
                     snappedObject = hit.transform.parent.parent.parent.gameObject;
                     snappedObject.transform.GetChild(2).gameObject.SetActive(true);
+
+                    if(snappedObject.tag == "Amenity")
+                    {
+                        snappedObject.transform.GetChild(3).gameObject.SetActive(true); //Activates the happiness radius
+                    }
+
                     canvasActive = true;
                 }
             }
@@ -75,12 +81,16 @@ public class CameraController : MonoBehaviour
         if(canvasActive)
         {
             snappedObject.transform.GetChild(2).transform.LookAt(Camera.main.transform); //activates the In-world pop-up
-            if(Input.anyKeyDown && snappedObject != null)
+            if((Input.anyKeyDown || editMode.editing) && snappedObject != null)
             {
                 if(!Input.GetMouseButton(0))
                 {
                     canvasActive = false;
                     snappedObject.transform.GetChild(2).gameObject.SetActive(false);
+                    if(snappedObject.tag == "Amenity")
+                    {
+                        snappedObject.transform.GetChild(3).gameObject.SetActive(false); //Deactivates the happiness radius
+                    }
                 }
             }
         }
