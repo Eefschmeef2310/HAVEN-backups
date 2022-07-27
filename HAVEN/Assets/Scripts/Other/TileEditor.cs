@@ -180,6 +180,15 @@ public class TileEditor : MonoBehaviour
                             tileCount++;
                         }
                     }
+
+                    //Testing for loop
+                    foreach (Transform child in tilemap.transform)
+                    {
+                        if(child.tag == "Amenity")
+                        {
+                            child.GetComponent<GenerateHappiness>().Start();
+                        }
+                    }
                     building.gameObject.SetActive(false);
                 }
             }  

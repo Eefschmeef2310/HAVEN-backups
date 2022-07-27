@@ -129,7 +129,7 @@ public class BridgeSwivel : MonoBehaviour
                         {
                             if(cellPosition.y%2 == 0)
                             {
-                                Debug.Log("test");
+                                //Debug.Log("test");
                                 swiveledToTile = true;
                                 transform.rotation = Quaternion.Euler(0, 60*(j), 0);
 
@@ -153,7 +153,7 @@ public class BridgeSwivel : MonoBehaviour
                             {
                                 if((cellPosition.x > 0 && cellPosition.y > 0) || (cellPosition.x < 0 && cellPosition.y < 0))
                                 {
-                                    Debug.Log("test2");
+                                    //Debug.Log("test2");
                                     swiveledToTile = true;
                                     transform.rotation = Quaternion.Euler(0, 60*(j+1), 0);
 
@@ -175,7 +175,7 @@ public class BridgeSwivel : MonoBehaviour
                                 }
                                 else
                                 {
-                                    Debug.Log("test3");
+                                    //Debug.Log("test3");
                                     swiveledToTile = true;
                                     transform.rotation = Quaternion.Euler(0, 60*(j-1), 0);
 
