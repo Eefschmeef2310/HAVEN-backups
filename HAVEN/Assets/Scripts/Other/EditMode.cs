@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EditMode : MonoBehaviour
 {
     public Transform tilemap;
     public bool editing = false;
     public TileEditor tileEditor;
+    public Image buildings;
 
     public void toggle()
     {
@@ -12,11 +14,13 @@ public class EditMode : MonoBehaviour
         {
             enterEdit();
             tileEditor.gameObject.SetActive(true);
+            buildings.gameObject.SetActive(true);
         }
         else
         {
             exitEdit();
             tileEditor.gameObject.SetActive(false);
+            buildings.gameObject.SetActive(false);
         }
     }
 

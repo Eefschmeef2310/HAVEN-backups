@@ -30,6 +30,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1335603886068992202}
   m_Father: {fileID: 0}
@@ -149,6 +150,7 @@ MonoBehaviour:
   tilemap: {fileID: 0}
   editing: 0
   tileEditor: {fileID: 0}
+  buildings: {fileID: 0}
 --- !u!1 &1335603886068992205
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +179,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1335603885694516334}
   m_RootOrder: 0
