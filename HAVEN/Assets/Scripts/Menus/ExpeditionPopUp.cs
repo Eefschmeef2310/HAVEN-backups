@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ExpeditionPopUp : MonoBehaviour
 {
     public EditMode editMode;
     public Canvas expeditionPopUp;
+    public TextMeshProUGUI text;
 
     void Update()
     {
@@ -29,11 +31,13 @@ public class ExpeditionPopUp : MonoBehaviour
     public void OpenExpeditionPopUp()
     {
         expeditionPopUp.gameObject.SetActive(true);
+        text.gameObject.SetActive(true);
     }
 
     public void CloseExpeditionPopUp()
     {
         expeditionPopUp.gameObject.SetActive(false);
+        text.gameObject.SetActive(false);
     }
 
     public void Expedition()
